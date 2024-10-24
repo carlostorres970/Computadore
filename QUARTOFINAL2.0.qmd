@@ -1,0 +1,722 @@
+---
+title: "¿Realmente influye el precio de los computadores portátiles basada en especificaciones técnicas y tendencias del mercado?"
+author: "Luis Carlos Oliveros Torres"
+lang: es
+theme: minty
+format:
+  html:
+    toc: true
+    toc-location: left
+    number-sections: true
+editor: visual 
+---
+
+```{r include = FALSE}
+knitr :: opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+
+
+```
+
+```{r}
+
+datos <- read.csv("datos.csv")
+datos2 <- read.csv("datos2.csv")
+datos <- subset(datos, select = -Model)
+datos2 <- subset(datos2, select = -Model)
+```
+
+![COMPUTADOR](computer.jpg)\
+
+# Planteamiento de preguntas:
+
+## ¿Cuáles son los principales factores que predicen el precio de los computadores portátiles en el mercado actual?
+
+### ¿El rendimiento de componentes como la tarjeta gráfica y el procesador tiene una relación directa con el precio de un portátil?
+
+### ¿Existe una relación significativa entre la marca del portátil y el precio, considerando características técnicas similares?
+
+# Objetivo general
+
+Identificar los principales factores que influyen en la predicción del precio de los computadores portátiles en el mercado actual, mediante un análisis de regresión lineal múltiple.
+
+## Objetivos especificos:
+
+1.  Analizar la relación entre el rendimiento de componentes clave, como la tarjeta gráfica y el procesador, y el precio de los computadores portátiles.
+
+2.  Determinar la influencia de la marca en el precio de los computadores portátiles, considerando características técnicas similares entre modelos.
+
+# Analisis comparativo.
+
+Antes de comenzar con los procesos estadísticos y el análisis, es importante aclarar que realizaremos tres análisis diferentes, cada uno con características completamente distintas. Esto nos permitirá compararlos y llegar a una conclusión común.
+
+## Análisis N.º 1
+
+Para este análisis, y probablemente para los demás, eliminaremos la columna llamada 'Modelo', ya que no aporta valor a los datos y genera ruido en los modelos que presentaremos a continuación.
+
+### TIPOS DE DATOS
+
+El conjunto de datos que se analizaron corresponde a 3000 observaciones y 12 variables, de las cuales 7 son cuantitativas y 4 son cualitativas. La @tbl-tabla1 presenta una clasificación de las variables.
+
+| VARIABLES        | TIPO         |
+|------------------|--------------|
+| Brand            | Cualitativa  |
+| Processor        | Cualitativa  |
+| Graphics Card    | Cualitativa  |
+| Operating System | Cualitativa  |
+| Ram              | cualitativa  |
+| Storage          | Cualitativa  |
+| Screen Size      | Cuantitativa |
+| Weight           | Cuantitativa |
+| Battery Life     | Cuantitativa |
+| Price            | Cuantitativa |
+| Warranty         | Cualitativa  |
+
+: Clasificacion {#tbl-tabla1}
+
+#### Analisis exploratorio
+
+```{r}
+datos$Brand <- as.factor(datos$Brand)
+datos$Graphics<- as.factor(datos$Graphics)
+datos$Operating<- as.factor(datos$Operating)
+datos$Processor <- as.factor(datos$Processor)
+datos$Storage <- as.factor(datos$Storage)
+datos$Warranty <- as.factor(datos$Warranty)
+datos$RAM <- as.factor(datos$RAM)
+```
+
+```{r}
+var_cuanti <- subset(datos,
+                     select = c("Price","Weight", "Battery", "Screen"))
+```
+
+##### Analisis de variables cualitativas
+
+Se presenta la matriz de diagramas y correlaciones, de donde extraeremos las primeras conclusiones y apreciaciones de las variables cuantitativas, presentada en la @fig-matriz
+
+```{r}
+#| label: fig-matriz
+library(GGally)
+ggpairs(var_cuanti)
+```
+
+###### Conlusion.
+
+En la matriz de correlación, se puede observar que las variables analizadas (Precio, Peso, Batería y Pantalla) no presentan correlaciones significativas entre ellas, ya que los coeficientes de correlación son muy cercanos a 0. Esto sugiere que, en esta base de datos, no hay relaciones lineales fuertes entre las variables que predicen el precio de los computadores portátiles. Por ejemplo, la correlación entre el precio y el peso es de -0.009, lo cual indica que prácticamente no hay asociación. Lo mismo ocurre entre el precio y la duración de la batería (-0.009) o el tamaño de la pantalla (-0.014).
+
+##### Analisis de variables cualitativas
+
+Se presentan los boxplots comparativos todos en relación al precio.
+
+###### Marca
+
+```{r}
+boxplot( Price ~ Brand , data = datos)
+```
+
+######## Conclusión de la marca en relación al precio
+
+Este boxplot muestra la distribución de los precios de diferentes marcas de computadoras portátiles: Acer, Apple, Asus, Dell, HP, Lenovo, MSI, y Razer. En el eje vertical se observa el rango de precios, que va desde 500 hasta 3000. Cada caja representa la mediana y el rango de los precios para cada marca. En general, las marcas presentan rangos de precios similares, pero con algunas diferencias notables en la dispersión. Por ejemplo, Apple y Dell parecen tener una mayor mediana en comparación con otras marcas como MSI o Razer, que muestran precios más bajos en promedio. Sin embargo, todas las marcas comparten rangos amplios de precios, lo que sugiere que dentro de cada marca hay una variedad de modelos con precios distintos.
+
+###### Procesador
+
+```{r}
+boxplot( Price ~ Processor , data = datos)
+```
+
+######## Conclusión del Procesador en relación al precio
+
+Caso similar pasa en con el procesador y el precio todas las marcas de procesadores su media se mantiene un rango muy parecido dando a entender que todos manejan un promedio de precios parecidos en los computadores con procesadores diferentes.
+
+###### Tarjeta Grafica
+
+```{r}
+boxplot( Price ~ Graphics , data = datos)
+```
+
+######## Conclusión de la tarjeta grafica en relación al precio
+
+En este caso existe una ligera diferencia entre la media de precio de la tarjeta grafica marca Intel UHD pero aun así su diferencia no es tan notoria o significativa.
+
+###### Sistema Operativo
+
+```{r}
+boxplot( Price ~ Operating , data = datos)
+```
+
+######## Conclusión de la Sistema operativo en relación al precio
+
+Para el sistema operativo podemos notar un poco mas de diferencia entre la media de precio de la marca macOS y no es de extrañar, es bien sabido que ese sistema operativo en especifico es uno de los mas costosos del mercado entonces tiene sentido que exista esa diferencia en el boxplot.
+
+###### RAM
+
+```{r}
+boxplot( Price ~ RAM , data = datos)
+```
+
+######## Conclusión de la Memoria RAM en relación al precio.
+
+Según estudios previos La RAM de 16 GB es una de las mas vendidas por su operatividad y su funcionamiento tanto así que la demanda de esa memoria subió exponencialmente para regular esto subieron el precio de la misma, y esto se puede ver reflejado en el boxplot, detallando bien nos podemos percatar que la RAM de 16 GB y 64 GB tiene prácticamente las misma media están por encima que la de 32 GB, en condiciones normales y la lógica de mercado no tendría sentido que una pieza de producción o linea pasada sea mas cara que una mas reciente pero como lo mencione anteriormente esto se da por la alta demanada de la RAM de 16 GB.
+
+###### Espacio de almacenamiento
+
+```{r}
+boxplot( Price ~ Storage , data = datos)
+```
+
+######## Conclusión del Espacio de almacenamiento en relación al precio
+
+Este Boxplot se muestra muy balanceado en términos del precio de todos los tipos de memoria de almacenamiento dando a entender que se dentro de cada uno existe un promedio muy parecido en precio y caantidad de computadores que lo poseen.
+
+###### Años de garantia.
+
+```{r}
+boxplot( Price ~ Warranty , data = datos)
+```
+
+######## Conclusión de los años de garantía en relación al precio.
+
+El Boxplot es bastante acertado podemos inferir que esa pequeña variación en el precio de los computadores de garantía a 3 años, su media es un poco mas alta que las otras, dado que para la empresas o comerciantes dar una garantía tan extendida puede generar perdidas en consecuencia se conoce que aumentan un poco el precio para encontrar el balance adecuado.
+
+####### CONCLUSION GENERAL
+
+Podemos Concluir que el modelo presenta unas variables cualitativas muy parecidas en cuestión de precio y la cantidad de computadores que tienen esas características, esto entorpece un poco el análisis dado que su comportamiento puede decir que esas mismas características no influyen en el precio.
+
+### Creación del modelo
+
+```{r}
+Modelo <- lm(Price ~  Weight + Screen +  Battery ,
+         data = var_cuanti)
+```
+
+```{r}
+summary(Modelo)
+```
+
+#### Conclusiones Iniciales
+
+El primer modelo presenta un análisis de cómo el precio de los dispositivos varía en función de variables como el peso, el tamaño de la pantalla y la duración de la batería. Aunque los coeficientes individuales no resultan significativos, el modelo ofrece información relevante al proporcionar una idea general sobre la relación de estas variables con el precio. El valor del intercepto destaca que, independientemente de los factores considerados, el precio base promedio tiende a situarse alrededor de 1915 dolares. Esto podría indicar que otras variables no incluidas en el modelo están influyendo en mayor medida en el precio, lo que abre la puerta a futuras exploraciones sobre qué factores podrían estar jugando un papel más determinante.
+
+### Multicolinealidad
+
+Aplicamos la función VIF(Variance Inflation Factor) para detectar si existe relación dependiente entre las variables regresoras.
+
+```{r}
+library(car)
+
+vif(Modelo)
+
+```
+
+#### Conclusiones del analisis del vif para el modelo
+
+Contradictorio al modelo el VIF del modelo es muy bueno dado que los valores no son \> 10 dándonos a entender que las variables regresoras son independientes entre si mismas.
+
+### Deteccion de outliers y puntos de influencia
+
+```{r}
+outliers <- c(14, 106, 192, 280, 518, 549, 634, 874, 907, 934, 
+              950, 1109, 1128, 1130, 1171, 1221, 1222, 1317, 
+              1335, 1380, 1405, 1449, 1466, 1631, 1682, 1792, 
+              1827, 1921, 2000, 2103, 2141, 2169, 2343, 2349, 
+              2371, 2451, 2477, 2541, 2543, 2577, 2626, 2632, 
+              2652, 2657, 2713)
+
+datos1 <- var_cuanti[-outliers, ]
+```
+
+Se utilizó la **distancia de Cook** para identificar y eliminar **45 filas** de un total de 3000 en nuestro modelo, consideradas como outliers y puntos influyentes. Estas observaciones se eliminaron para mejorar la robustez y precisión del modelo, ya que su presencia podría distorsionar las estimaciones de los parámetros. Al crear un nuevo conjunto de datos limpio, denominado `datos1`, buscamos obtener resultados más confiables y una interpretación más adecuada del modelo.
+
+#### Creacion de un nuevo modelo
+
+```{r}
+
+Modelo1.0 <- lm(Price ~   Weight + Screen +  Battery ,
+                data = datos1)
+summary(Modelo1.0)
+```
+
+##### Conlusiones
+
+Al comparar ambos modelos, uno con la totalidad de los datos y otro tras la eliminación de 45 outliers, se observa una ligera mejora en el ajuste del modelo al excluir los valores atípicos. El error estándar residual se redujo, lo que no dice es que el modelo es ahora más preciso en sus predicciones. Aunque los coeficientes siguen sin ser significativos, el intercepto, que pasó de 1915 a 1955, indica que el precio base estimado permanece constante, independientemente de las variaciones en las características del producto. Este análisis resalta la importancia de depurar los datos para obtener resultados más representativos, lo que permitió una visión más clara de la relación entre el peso, la pantalla y la batería con el precio.
+
+### Validacion
+
+Se procede a validar el en nuevo modelo `Modelo1.0` con las respectivas pruebas de Normalidad, Homocedasticidad e Independencia.
+
+#### Normalidad
+
+```{r}
+datos1$Residuales<- rstandard(Modelo1.0)
+shapiro.test(Modelo1.0$residuals)
+```
+
+##### Conclusion
+
+El modelo no presenta una distribución normal dado que el valor p es muchisimo menos que la significancia en este caso de 0,05 dado esto no permite concluir que los datos no se distribuyen correctamente.
+
+#### Homocedasticidad
+
+```{r}
+library(lmtest)
+bptest(Modelo1.0)
+```
+
+##### conclusion
+
+Para la prueba de homocedasticidad el resultado es positivo dado que el valor-p de la prueba si es mayor que 0.05 lo que indica que los datos son homocedasticos lo que indica que la variable se distribuye con igual varianza en cualquiera de las estimaciones hechas mediante el modelo.
+
+#### Independencia
+
+```{r}
+bgtest(Modelo1.0)
+dwtest(Modelo1.0)
+
+```
+
+##### Conclusion
+
+Según las pruebas, los datos son completamente independientes lo que sugiere que el comportamiento estadístico de una de los cada uno de los datos no se ve afectado por los valores que toma los otros.
+
+#### Aprecicaciones Generales de la validación
+
+La validación de un modelo que muestra falta de normalidad, pero es homocedástico e independiente, sugiere que, aunque la variabilidad de los errores es constante y no hay correlación entre ellos, la falta de normalidad puede comprometer la validez de los resultados estadisticos. Esto implica que se deben considerar ajustes al modelo, como transformaciones de datos, para mejorar su adecuación y asegurar que las conclusiones sean confiables.
+
+### Refinación del modelo
+
+```{r}
+datosp <- datos1 <- datos[-outliers, ]
+```
+
+```{r}
+
+modelocontodo <-lm(Price ~   . ,
+                   data = datosp)
+modF <- step(modelocontodo, trace = TRUE, direction = "backward")
+
+```
+
+#### Seleccion del modelo propuesto
+
+```{r}
+summary(modF)
+```
+
+##### Conclusion
+
+Dado a que no tendría mucho sentido y relevancia comparar el precio con nada (1) nos debemos acoplar al modelo inicial para tener al menos algunos datos con los cuales trabajar.
+
+### Metricas
+
+En este bloque de código, evaluaremos el rendimiento del modelo de regresión lineal ajustado utilizando diversas métricas de error. Calcularemos indicadores que nos permitirán cuantificar la precisión de las predicciones en comparación con los valores reales, así como criterios de información que ayudarán a evaluar la calidad del modelo. Estas métricas nos ofrecerán una visión general del desempeño del modelo en el conjunto de datos de prueba.
+
+```{r}
+set.seed(541)
+sample <- sample.int(n = nrow(datosp), size = floor(0.80*nrow(datosp)), replace = F)
+train <- datosp[sample, ]
+test <- datosp[-sample, ]
+
+```
+
+```{r}
+modelotesting <- lm(formula = Price ~ . , data = test)
+
+prediccion <- predict.lm(modelotesting, data = test)
+
+```
+
+```{r}
+library(Metrics)
+
+metricas <- c(mae(test$Price,prediccion),
+              mape(test$Price, prediccion),
+              mse(test$Price, prediccion),
+              rmse(test$Price, prediccion),
+              AIC(modelotesting),
+              BIC(modelotesting),
+              summary(modelotesting)$r.squared)
+names(metricas) <- c("MAE","MAPE","MSE","RMSE","AIC","BIC","R2")
+
+```
+
+```{r}
+metricas
+```
+
+##### Analisis de las metricas
+
+El modelo muestra un desempeño que, si bien puede ser mejorado, proporciona una buena base para entender la relación entre las variables analizadas y el precio. A pesar de ciertos márgenes de error, las predicciones capturan de manera consistente las tendencias generales en los datos.
+
+### Conclusiones Finales del modelo N.º 1
+
+En este análisis, se abordó la relación entre diversas características de los computadores portátiles y su precio, buscando responder preguntas clave sobre los principales factores que lo predicen. El modelo planteado evaluó el impacto de variables como el peso, el tamaño de la pantalla y la duración de la batería, encontrando que, aunque estas variables aportan información relevante, su influencia directa sobre el precio es limitada en comparación con otros factores que podrían no incluimos en este análisis , como el rendimiento de componentes más técnicos, como la tarjeta gráfica y el procesador.
+
+En cuanto a la marca, aunque no se incluyó directamente en este modelo, es probable que sea un factor influyente del precio, especialmente cuando las características técnicas son similares. De hecho, estudios previos han demostrado que la marca influye notablemente en la percepción de calidad y en los precios de los portátiles.
+
+Si bien el modelo no logró captar todas las relaciones esperadas, debido a la complejidad de los datos y las limitaciones del mismo, logramos cumplir con los supuestos estadísticos de homocedasticidad e independencia. Esto asegura que los resultados, aunque mejorables, son válidos y proporcionan una primera aproximación para comprender las tendencias generales en la determinación de los precios. A lo largo del proceso, se realizo lo mejor posible para optimizar el modelo, pero debido a la naturaleza de los datos, se trabajó con las mejores condiciones posibles.
+
+## Analisis N°.2
+
+Para este segundo análisis nos enfocaremos en características especificas de lo que se cree que influye en gran medida el precio de los computadores portátiles.
+
+Para los análisis 2 y 3 no profundizaremos todas las variables como en sacar conclusiones de cada variable o boxplots ye que se manejaran casi que de la misma forma que en el análisis 1 esto con el fin de no repetir información y ser lo mas preciso posible.
+
+### Tipos de datos
+
+```{r}
+datos2$Brand <- as.factor(datos2$Brand)
+datos2$Graphics<- as.factor(datos2$Graphics)
+datos2$Operating<- as.factor(datos2$Operating)
+datos2$Processor <- as.factor(datos2$Processor)
+datos2$Storage <- as.factor(datos2$Storage)
+datos2$Warranty <- as.factor(datos2$Warranty)
+datos2$RAM <- as.factor(datos2$RAM)
+```
+
+```{r}
+var_cuanti.2 <- subset(datos2,
+                     select = c("Price","RAM", "Storage", "Graphics","Processor"))
+```
+
+Se mantendrá la características iniciales de los tipos de datos para este segundo análisis.
+
+#### Creacion del modelo
+
+Para la creación del modelo 2 solo tomaremos en cuenta las Características técnicas de hardware ya que se ha dicho e investigado, que estos factores influyen bastante en el precio de una computadora las cuales son :
+
+-   Processor (Procesador)
+-   RAM (Memoria RAM)
+-   Storage (Almacenamiento)
+-   Graphics (Tarjeta gráfica)
+
+```{r}
+Modelo.2 <- lm(Price ~  RAM + Storage +  Graphics + Processor ,
+         data = var_cuanti.2)
+```
+
+```{r}
+summary(Modelo.2)
+```
+
+#### Apreciaciones iniciales del modelo N°.2
+
+El segundo modelo, centrado exclusivamente en las características técnicas de hardware, proporciona una visión valiosa sobre cómo componentes como el procesador, la memoria RAM, el almacenamiento y la tarjeta gráfica influyen en el precio de los portátiles. Aunque los coeficientes individuales no resultaron significativos, el modelo permite identificar que estas variables, particularmente el procesador y la RAM, tienen un impacto notable en el precio base del dispositivo. El modelo ofrece una primera aproximación útil, mostrando una base de 1801 dolares, lo que refuerza la importancia del hardware como un factor clave en la variación de precios en el mercado actual.
+
+### Multicolinealidad
+
+Aplicamos la función VIF(Variance Inflation Factor) para detectar si existe relación dependiente entre las variables regresoras.
+
+```{r}
+library(car)
+
+vif(Modelo.2)
+```
+
+#### Conclusion del Vif:
+
+Se puede concluir que no hay relación entre las variables regresoras esto siempre es positivo para todos los analisis.
+
+### Deteccion de Outliers y Puntos de influencia.
+
+Dado que se usa la misma tabla y el mismo tipo de variables replicaremos los outliers del análisis pasado los cuales fueron 45 filas candidatas a outliers.
+
+```{r}
+outliers <- c(14, 106, 192, 280, 518, 549, 634, 874, 907, 934, 
+              950, 1109, 1128, 1130, 1171, 1221, 1222, 1317, 
+              1335, 1380, 1405, 1449, 1466, 1631, 1682, 1792, 
+              1827, 1921, 2000, 2103, 2141, 2169, 2343, 2349, 
+              2371, 2451, 2477, 2541, 2543, 2577, 2626, 2632, 
+              2652, 2657, 2713)
+
+datos3 <- var_cuanti.2[-outliers, ]
+```
+
+#### Creacion de un nuevo modelo
+
+```{r}
+Modelo2.0 <- lm(Price ~  RAM + Storage +  Graphics + Processor,
+                data = datos3)
+summary(Modelo2.0)
+```
+
+##### Analisis del nuevo modelo
+
+Al eliminar los 45 outliers en este nuevo modelo, se observa una ligera mejora en la precisión del ajuste. El error estándar residual se redujo de 720.3 a 711.1, lo que indica que las predicciones son ahora un poco más cercanas a los valores reales. A pesar de que las variables aún no son significativas, el modelo muestra una mayor estabilidad en los resultados y reafirma la idea de que la exclusión de outliers permite un análisis más preciso a los datos generales. Las diferencias no son drásticas, pero el modelo es más representativo.
+
+### Validacion
+
+Se procede a validar el en nuevo modelo `Modelo2.0` con las respectivas pruebas de Normalidad, Homocedasticidad e Independencia.
+
+#### Normalidad
+
+```{r}
+datos3$Residuales<- rstandard(Modelo1.0)
+shapiro.test(Modelo2.0$residuals)
+```
+
+##### Conclusion
+
+Volvemos a no tener normalidad en los datos lo que indica que podemos obtener conclusiones inexactas o engañosas, o no detectar efectos o relaciones significativas.
+
+#### Homocedasticidad
+
+```{r}
+library(lmtest)
+bptest(Modelo2.0)
+```
+
+##### conclusion
+
+Por desgracia los datos son heterocedasticos lo que indica que la varianza de los errores no es constante en todas las observaciones realizadas.
+
+#### Independencia
+
+```{r}
+bgtest(Modelo2.0)
+dwtest(Modelo2.0)
+
+```
+
+##### conclusion
+
+Para el modelo 2 los datos si son independientes
+
+#### Aprecicaciones Generales de la validación
+
+En este análisis, se observó que los datos no son normales, son heterocedásticos e independientes. Aunque la independencia de los errores es un aspecto positivo para la validez del modelo, la heterocedasticidad indica que la varianza de los errores no es constante, lo que puede afectar la precisión del modelo.
+
+### Refinacion del modelo
+
+Pondremos como punto de partida el modelo2.0 con esas mismas variables regresoras e ir eliminando cada una de las variables hasta llegar al AIC mínimo, cabe aclarar que debe de tener sentido el modelo propuesto al final, en caso contrario seguiremos con el planteado al inicio.
+
+```{r}
+
+modF2 <- step(Modelo2.0, trace = TRUE, direction = "backward")
+```
+
+#### Modelo propuesto por la funcion StepWise
+
+```{r}
+summary(modF2)
+```
+
+##### CONCLUSION
+
+El mismo problema presente en el análisis anterior el stepwise nos proporciona un modelo no muy efectivo para predecir el precio de los computadores por esto debemos seguir con el modelo inicial.
+
+### Metricas
+
+```{r}
+set.seed(541)
+sample2 <- sample.int(n = nrow(var_cuanti.2), size = floor(0.80*nrow(var_cuanti.2)), replace = F)
+train2 <- var_cuanti.2[sample, ]
+test2 <- var_cuanti.2[-sample, ]
+
+```
+
+```{r}
+modelotesting2 <- lm(formula = Price ~ . , data = test2)
+prediccion2 <- predict.lm(modelotesting, data = test2)
+
+```
+
+```{r}
+library(Metrics)
+
+metricas2 <- c(mae(test2$Price,prediccion2),
+              mape(test2$Price, prediccion2),
+              mse(test2$Price, prediccion2),
+              rmse(test2$Price, prediccion2),
+              AIC(modelotesting2),
+              BIC(modelotesting2),
+              summary(modelotesting2)$r.squared)
+names(metricas2) <- c("MAE","MAPE","MSE","RMSE","AIC","BIC","R2")
+
+```
+
+```{r}
+metricas2
+```
+
+#### Conlusion
+
+Este modelo, aunque mejorable, ofrece una base sólida para analizar cómo las características técnicas de hardware influyen en el precio de los portátiles. El MAE de 648.53 indica que el error promedio de las predicciones está dentro de un rango razonable, considerando la complejidad de los datos. Además, el RMSE de 755.17 refleja consistencia en las estimaciones, lo que permite identificar tendencias generales de precios basadas en las especificaciones técnicas. Sin embargo, el R² de 2.86% indica que aún hay otros factores importantes que no están siendo capturados por el modelo. A pesar del panorama, el análisis proporciona una primera aproximación útil, destacando la influencia del hardware en el mercado actual.
+
+### Conclusiones Finales del modelo N.º 2
+
+El modelo enfocado en las características técnicas de hardware como el procesador, la RAM, el almacenamiento y la tarjeta gráfica, proporciona una visión inicial sobre su influencia en el precio de los portátiles. Aunque las variables analizadas no resultaron ser significativas de manera individual, el modelo refleja ciertas tendencias generales que ayudan a entender la dinámica de precios en el mercado actual. A pesar de que los residuos muestran heterocedasticidad y no normalidad, se confirma la independencia de los errores, lo que valida en parte las conclusiones obtenidas.
+
+En cuanto a las preguntas clave, los resultados sugieren que, aunque las características técnicas de hardware influyen en el precio, es probable que factores adicionales, como la marca, jueguen un rol importante que no fue apreciado para el modelo. Si embargo el ajuste no es muy óptimo pero refleja el máximo de precisión que se pudo obtener, lo que refuerza la necesidad de explorar nuevas variables para mejorar el ajuste.
+
+## Análisis N.º 3
+
+En este análisis Abordaremos principalmente las características físicas de un computador portátil en combinación con las características de mercado, ademas de eso cambiaremos el tipo de datos que se había propuesto inicialmente.
+
+### Tipos de datos
+
+Para este modelo trabajaremos con las siguientes variables
+
+Weight(Peso) Screen (Tamaño de pantalla) Battery (Duración de batería) Brand (Marca) Warranty (Garantía)
+
+```{r}
+datos3 <- read.csv("datos.csv")
+datos3 <- subset(datos3, select = -Model)
+```
+
+```{r}
+datos3$Brand <- as.factor(datos3$Brand)
+datos3$Graphics<- as.factor(datos3$Graphics)
+datos3$Operating<- as.factor(datos3$Operating)
+datos3$Processor <- as.factor(datos3$Processor)
+datos3$Storage <- as.factor(datos3$Storage)
+datos3$Warranty <- as.factor(datos3$Warranty)
+datos3$RAM <- as.factor(datos3$RAM)
+datos3$Screen <- as.factor(datos3$Screen)
+```
+
+Cambiamos la variable "Screen" que estaba definida como cuantitativa a cualitativa para analizar este nuevo modelo.
+
+```{r}
+var_cuanti.3 <- subset(datos,
+                     select = c("Price","Weight", "Battery", "Screen","Brand", "Warranty"))
+```
+
+#### Creacion del modelo
+
+```{r}
+Modelo.3 <- lm(Price ~  Weight +Battery + Battery + Screen + Brand + Warranty ,
+         data = var_cuanti.3)
+```
+
+```{r}
+summary(Modelo.3)
+
+```
+
+#### Conclusion del modelo
+
+Este modelo incorpora la variable adicional de la garantía junto con el peso, la batería, el tamaño de pantalla y la marca, y ofrece una visión más completa sobre los factores que pueden influir en el precio de los portátiles. La variable "Warranty2" muestra una relación significativa, sugiriendo que la duración de la garantía podría tener un impacto en el precio. Aunque otras variables, como el peso y la marca, no resultaron ser estadísticamente significativas, el modelo muestra que la percepción de valor y la garantía del producto pueden ser factores importantes en la determinación del precio.
+
+### Multicolinealidad
+
+Aplicamos la función VIF(Variance Inflation Factor) para detectar si existe relación dependiente entre las variables regresoras.
+
+```{r}
+library(car)
+
+vif(Modelo.3)
+```
+
+#### Conclusiones del Vif
+
+Con este tercer modelo podemos reafirmar que todos los modelos que hagamos con las variables sin ser transformadas siempre dará como resultado que no hay multicolinealidad.
+
+### Deteccion de outliers y puntos de influencia
+
+Para este modelo mantendremos los 3000 datos con el fin de examinar si en realidad afecta o no el modelo en cuestión.
+
+### Validacion
+
+Se procede a validar el en nuevo modelo `Modelo.3` con las respectivas pruebas de Normalidad, Homocedasticidad e Independencia.
+
+Para esta validación omitiremos las conclusiones dado que ya entendimos como funciona y en que afecta con los modelos anteriores a este.
+
+#### Normalidad
+
+```{r}
+datos3$Residuales<- rstandard(Modelo.3)
+shapiro.test(Modelo.3$residuals)
+```
+
+#### Homocedasticidad
+
+```{r}
+library(lmtest)
+bptest(Modelo.3)
+```
+
+#### Independencia
+
+```{r}
+bgtest(Modelo.3)
+dwtest(Modelo.3)
+
+```
+
+### Refinacion del modelo
+
+Pondremos como punto de partida el modelo.3 con esas mismas variable regresoras e ir eliminando cada una de las variables hasta llegar al AIC mínimo, cabe aclarar que debe de tener sentido el modelo propuesto al final en caso contrario seguiremos con el planteado al inicio.
+
+```{r}
+
+modF3 <- step(Modelo.3, trace = TRUE, direction = "backward")
+```
+
+#### Modelo propuesto por la funcion StepWise
+
+```{r}
+summary(modF3)
+```
+
+##### CONCLUSION
+
+A pesar de que el stepwise nos arrojo un modelo con una variable no lo podemos tomar ya que estaríamos omitiendo mucha información para el análisis, a nivel de mercado se sabe que la garantía no es lo único que influye en el precio de los computadores.
+
+### Metricas
+
+```{r}
+set.seed(123)
+sample3 <- sample.int(n = nrow(var_cuanti.3), size = floor(0.80*nrow(var_cuanti.3)), replace = F)
+train3 <- var_cuanti.3[sample, ]
+test3 <- var_cuanti.3[-sample, ]
+
+```
+
+```{r}
+modelotesting3 <- lm(formula = Price ~ . , data = test3)
+prediccion3 <- predict.lm(modelotesting, data = test3)
+
+```
+
+```{r}
+library(Metrics)
+
+metricas3 <- c(mae(test3$Price,prediccion3),
+              mape(test3$Price, prediccion3),
+              mse(test3$Price, prediccion3),
+              rmse(test3$Price, prediccion3),
+              AIC(modelotesting3),
+              BIC(modelotesting3),
+              summary(modelotesting3)$r.squared)
+names(metricas3) <- c("MAE","MAPE","MSE","RMSE","AIC","BIC","R2")
+
+```
+
+```{r}
+metricas3
+```
+
+#### Conlusion
+
+A pesar de que las métricas no son tan precisas respecto a el precio de los portátiles, hay aspectos destacables en el rendimiento del modelo. El error absoluto medio (MAE) de 648.5 indica que el modelo está logrando predecir con un margen de error manejable para un mercado tan variado como el de los portátiles. El RMSE de 755.2 también sugiere que, aunque existen diferencias en las predicciones, el modelo sigue proporcionando estimaciones útiles. Además, el AIC y el BIC reflejan la simplicidad del modelo, lo cual puede ser útil para seguir refinando predicciones sin introducir demasiada complejidad.
+
+## Conclusiones Finales del modelo N.º 3
+
+Este modelo 3 nos da una visión clara de cómo ciertas características, como el peso, la batería, la pantalla, la marca y la garantía, influyen en el precio de los portátiles, a pesar de las particularidades de los datos. El hecho de que no haya multicolinealidad en las variables regresoras indica que las variables explicativas son independientes entre sí, lo que refuerza la validez de los coeficientes estimados. Además, aunque los datos no son normales, el modelo es homocedástico e independiente, lo que garantiza una distribución equitativa de los errores y evita problemas de correlación entre ellos. Si bien las métricas como el MAE y el RMSE muestran que el modelo tiene margen de mejora, su simplicidad lo convierten en una herramienta útil para estimar precios en mercados complejos.
+
+# Conclusion Final
+
+A lo largo de este análisis, se ha investigado la influencia de varios factores en el precio de los computadores portátiles, enfocándonos en tres modelos clave. Los principales factores que se consideraron fueron las características técnicas como la memoria RAM, el almacenamiento, la tarjeta gráfica, el procesador, así como variables adicionales como el peso, el tamaño de la pantalla, la marca y la garantía. En general, los resultados sugieren que no existe una correlación fuerte y directa entre las variables individuales y el precio de los portátiles, pero sí se observan algunas tendencias interesantes.
+
+1.  **Componentes de hardware**: Aunque en los modelos analizados no se encontró una relación fuerte entre componentes como la tarjeta gráfica y el procesador con el precio, es evidente que estos factores son clave en la diferenciación de gamas de productos. Las tarjetas gráficas más potentes, como la serie NVIDIA RTX, tienden a asociarse con incrementos de precio, aunque esta relación no fue estadísticamente significativa en el análisis. Sin embargo, segun investigaciones los consumidores probablemente perciban el valor de estos componentes.
+
+2.  **Marca del portátil**: Al considerar la marca de los computadores portátiles, tampoco se encontró una relación significativa en el contexto de características técnicas similares, lo que indica que, a nivel técnico, las marcas compiten de manera equilibrada. Sin embargo, esto no necesariamente refleja la percepción del consumidor, donde marcas premium como Apple tienden a tener precios más altos en general.
+
+3.  **Análisis estadístico**: Los modelos demostraron independencia de errores, homocedasticidad y ausencia de multicolinealidad, lo que indica que los modelos están correctamente especificados en términos de las interrelaciones entre las variables. Aunque no se logró normalidad en los datos, la estructura del modelo fue robusta, y el análisis de múltiples métricas como MAE, MSE y R2, a pesar de ser relativamente bajos, nos da ea entender que capturamos aspectos clave de la variabilidad en el precio.
+
+Por último, es importante mencionar que se probaron otros modelos con diferentes transformaciones y ajustes, pero sus resultados fueron similares a los tres presentados, lo que refuerza la complejidad inherente de los datos y justifica la elección de los modelos finales utilizados.
+
+# Referencias
+
+-   Cinco factores a tener en cuenta para comprar una computadora nueva más allá del precio Recuperado de <https://www.losandes.com.ar/muy-tecno/cinco-factores-a-tener-en-cuenta-para-comprar-una-computadora-nueva-mas-alla-del-precio/>
+-   ¿Qué hace caro o barato a un computador? Guía de compra. Recuperado de <https://www.eleconomista.net/tecnologia/Que-hace-caro-o-barato-a-un-computador-Guia-de-compra-20230822-0029.html>

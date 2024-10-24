@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.555">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Luis Carlos Oliveros Torres">
+
+<title>¿Realmente influye el precio de los computadores portátiles basada en especificaciones técnicas y tendencias del mercado?</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="QUARTOFINAL2.0_files/libs/clipboard/clipboard.min.js"></script>
+<script src="QUARTOFINAL2.0_files/libs/quarto-html/quarto.js"></script>
+<script src="QUARTOFINAL2.0_files/libs/quarto-html/popper.min.js"></script>
+<script src="QUARTOFINAL2.0_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="QUARTOFINAL2.0_files/libs/quarto-html/anchor.min.js"></script>
+<link href="QUARTOFINAL2.0_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="QUARTOFINAL2.0_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="QUARTOFINAL2.0_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="QUARTOFINAL2.0_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="QUARTOFINAL2.0_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#planteamiento-de-preguntas" id="toc-planteamiento-de-preguntas" class="nav-link active" data-scroll-target="#planteamiento-de-preguntas"><span class="header-section-number">1</span> Planteamiento de preguntas:</a>
+  <ul class="collapse">
+  <li><a href="#cuáles-son-los-principales-factores-que-predicen-el-precio-de-los-computadores-portátiles-en-el-mercado-actual" id="toc-cuáles-son-los-principales-factores-que-predicen-el-precio-de-los-computadores-portátiles-en-el-mercado-actual" class="nav-link" data-scroll-target="#cuáles-son-los-principales-factores-que-predicen-el-precio-de-los-computadores-portátiles-en-el-mercado-actual"><span class="header-section-number">1.1</span> ¿Cuáles son los principales factores que predicen el precio de los computadores portátiles en el mercado actual?</a>
+  <ul class="collapse">
+  <li><a href="#el-rendimiento-de-componentes-como-la-tarjeta-gráfica-y-el-procesador-tiene-una-relación-directa-con-el-precio-de-un-portátil" id="toc-el-rendimiento-de-componentes-como-la-tarjeta-gráfica-y-el-procesador-tiene-una-relación-directa-con-el-precio-de-un-portátil" class="nav-link" data-scroll-target="#el-rendimiento-de-componentes-como-la-tarjeta-gráfica-y-el-procesador-tiene-una-relación-directa-con-el-precio-de-un-portátil"><span class="header-section-number">1.1.1</span> ¿El rendimiento de componentes como la tarjeta gráfica y el procesador tiene una relación directa con el precio de un portátil?</a></li>
+  <li><a href="#existe-una-relación-significativa-entre-la-marca-del-portátil-y-el-precio-considerando-características-técnicas-similares" id="toc-existe-una-relación-significativa-entre-la-marca-del-portátil-y-el-precio-considerando-características-técnicas-similares" class="nav-link" data-scroll-target="#existe-una-relación-significativa-entre-la-marca-del-portátil-y-el-precio-considerando-características-técnicas-similares"><span class="header-section-number">1.1.2</span> ¿Existe una relación significativa entre la marca del portátil y el precio, considerando características técnicas similares?</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#objetivo-general" id="toc-objetivo-general" class="nav-link" data-scroll-target="#objetivo-general"><span class="header-section-number">2</span> Objetivo general</a>
+  <ul class="collapse">
+  <li><a href="#objetivos-especificos" id="toc-objetivos-especificos" class="nav-link" data-scroll-target="#objetivos-especificos"><span class="header-section-number">2.1</span> Objetivos especificos:</a></li>
+  </ul></li>
+  <li><a href="#analisis-comparativo." id="toc-analisis-comparativo." class="nav-link" data-scroll-target="#analisis-comparativo."><span class="header-section-number">3</span> Analisis comparativo.</a>
+  <ul class="collapse">
+  <li><a href="#análisis-n.º-1" id="toc-análisis-n.º-1" class="nav-link" data-scroll-target="#análisis-n.º-1"><span class="header-section-number">3.1</span> Análisis N.º 1</a>
+  <ul class="collapse">
+  <li><a href="#tipos-de-datos" id="toc-tipos-de-datos" class="nav-link" data-scroll-target="#tipos-de-datos"><span class="header-section-number">3.1.1</span> TIPOS DE DATOS</a></li>
+  <li><a href="#creación-del-modelo" id="toc-creación-del-modelo" class="nav-link" data-scroll-target="#creación-del-modelo"><span class="header-section-number">3.1.2</span> Creación del modelo</a></li>
+  <li><a href="#multicolinealidad" id="toc-multicolinealidad" class="nav-link" data-scroll-target="#multicolinealidad"><span class="header-section-number">3.1.3</span> Multicolinealidad</a></li>
+  <li><a href="#deteccion-de-outliers-y-puntos-de-influencia" id="toc-deteccion-de-outliers-y-puntos-de-influencia" class="nav-link" data-scroll-target="#deteccion-de-outliers-y-puntos-de-influencia"><span class="header-section-number">3.1.4</span> Deteccion de outliers y puntos de influencia</a></li>
+  <li><a href="#validacion" id="toc-validacion" class="nav-link" data-scroll-target="#validacion"><span class="header-section-number">3.1.5</span> Validacion</a></li>
+  <li><a href="#refinación-del-modelo" id="toc-refinación-del-modelo" class="nav-link" data-scroll-target="#refinación-del-modelo"><span class="header-section-number">3.1.6</span> Refinación del modelo</a></li>
+  <li><a href="#metricas" id="toc-metricas" class="nav-link" data-scroll-target="#metricas"><span class="header-section-number">3.1.7</span> Metricas</a></li>
+  <li><a href="#conclusiones-finales-del-modelo-n.º-1" id="toc-conclusiones-finales-del-modelo-n.º-1" class="nav-link" data-scroll-target="#conclusiones-finales-del-modelo-n.º-1"><span class="header-section-number">3.1.8</span> Conclusiones Finales del modelo N.º 1</a></li>
+  </ul></li>
+  <li><a href="#analisis-n.2" id="toc-analisis-n.2" class="nav-link" data-scroll-target="#analisis-n.2"><span class="header-section-number">3.2</span> Analisis N°.2</a>
+  <ul class="collapse">
+  <li><a href="#tipos-de-datos-1" id="toc-tipos-de-datos-1" class="nav-link" data-scroll-target="#tipos-de-datos-1"><span class="header-section-number">3.2.1</span> Tipos de datos</a></li>
+  <li><a href="#multicolinealidad-1" id="toc-multicolinealidad-1" class="nav-link" data-scroll-target="#multicolinealidad-1"><span class="header-section-number">3.2.2</span> Multicolinealidad</a></li>
+  <li><a href="#deteccion-de-outliers-y-puntos-de-influencia." id="toc-deteccion-de-outliers-y-puntos-de-influencia." class="nav-link" data-scroll-target="#deteccion-de-outliers-y-puntos-de-influencia."><span class="header-section-number">3.2.3</span> Deteccion de Outliers y Puntos de influencia.</a></li>
+  <li><a href="#validacion-1" id="toc-validacion-1" class="nav-link" data-scroll-target="#validacion-1"><span class="header-section-number">3.2.4</span> Validacion</a></li>
+  <li><a href="#refinacion-del-modelo" id="toc-refinacion-del-modelo" class="nav-link" data-scroll-target="#refinacion-del-modelo"><span class="header-section-number">3.2.5</span> Refinacion del modelo</a></li>
+  <li><a href="#metricas-1" id="toc-metricas-1" class="nav-link" data-scroll-target="#metricas-1"><span class="header-section-number">3.2.6</span> Metricas</a></li>
+  <li><a href="#conclusiones-finales-del-modelo-n.º-2" id="toc-conclusiones-finales-del-modelo-n.º-2" class="nav-link" data-scroll-target="#conclusiones-finales-del-modelo-n.º-2"><span class="header-section-number">3.2.7</span> Conclusiones Finales del modelo N.º 2</a></li>
+  </ul></li>
+  <li><a href="#análisis-n.º-3" id="toc-análisis-n.º-3" class="nav-link" data-scroll-target="#análisis-n.º-3"><span class="header-section-number">3.3</span> Análisis N.º 3</a>
+  <ul class="collapse">
+  <li><a href="#tipos-de-datos-2" id="toc-tipos-de-datos-2" class="nav-link" data-scroll-target="#tipos-de-datos-2"><span class="header-section-number">3.3.1</span> Tipos de datos</a></li>
+  <li><a href="#multicolinealidad-2" id="toc-multicolinealidad-2" class="nav-link" data-scroll-target="#multicolinealidad-2"><span class="header-section-number">3.3.2</span> Multicolinealidad</a></li>
+  <li><a href="#deteccion-de-outliers-y-puntos-de-influencia-1" id="toc-deteccion-de-outliers-y-puntos-de-influencia-1" class="nav-link" data-scroll-target="#deteccion-de-outliers-y-puntos-de-influencia-1"><span class="header-section-number">3.3.3</span> Deteccion de outliers y puntos de influencia</a></li>
+  <li><a href="#validacion-2" id="toc-validacion-2" class="nav-link" data-scroll-target="#validacion-2"><span class="header-section-number">3.3.4</span> Validacion</a></li>
+  <li><a href="#refinacion-del-modelo-1" id="toc-refinacion-del-modelo-1" class="nav-link" data-scroll-target="#refinacion-del-modelo-1"><span class="header-section-number">3.3.5</span> Refinacion del modelo</a></li>
+  <li><a href="#metricas-2" id="toc-metricas-2" class="nav-link" data-scroll-target="#metricas-2"><span class="header-section-number">3.3.6</span> Metricas</a></li>
+  </ul></li>
+  <li><a href="#conclusiones-finales-del-modelo-n.º-3" id="toc-conclusiones-finales-del-modelo-n.º-3" class="nav-link" data-scroll-target="#conclusiones-finales-del-modelo-n.º-3"><span class="header-section-number">3.4</span> Conclusiones Finales del modelo N.º 3</a></li>
+  </ul></li>
+  <li><a href="#conclusion-final" id="toc-conclusion-final" class="nav-link" data-scroll-target="#conclusion-final"><span class="header-section-number">4</span> Conclusion Final</a></li>
+  <li><a href="#referencias" id="toc-referencias" class="nav-link" data-scroll-target="#referencias"><span class="header-section-number">5</span> Referencias</a></li>
+  </ul>
+</nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">¿Realmente influye el precio de los computadores portátiles basada en especificaciones técnicas y tendencias del mercado?</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autor/a</div>
+    <div class="quarto-title-meta-contents">
+             <p>Luis Carlos Oliveros Torres </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><img src="computer.jpg" class="img-fluid" alt="COMPUTADOR"><br>
+</p>
+<section id="planteamiento-de-preguntas" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Planteamiento de preguntas:</h1>
+<section id="cuáles-son-los-principales-factores-que-predicen-el-precio-de-los-computadores-portátiles-en-el-mercado-actual" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="cuáles-son-los-principales-factores-que-predicen-el-precio-de-los-computadores-portátiles-en-el-mercado-actual"><span class="header-section-number">1.1</span> ¿Cuáles son los principales factores que predicen el precio de los computadores portátiles en el mercado actual?</h2>
+<section id="el-rendimiento-de-componentes-como-la-tarjeta-gráfica-y-el-procesador-tiene-una-relación-directa-con-el-precio-de-un-portátil" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="el-rendimiento-de-componentes-como-la-tarjeta-gráfica-y-el-procesador-tiene-una-relación-directa-con-el-precio-de-un-portátil"><span class="header-section-number">1.1.1</span> ¿El rendimiento de componentes como la tarjeta gráfica y el procesador tiene una relación directa con el precio de un portátil?</h3>
+</section>
+<section id="existe-una-relación-significativa-entre-la-marca-del-portátil-y-el-precio-considerando-características-técnicas-similares" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="existe-una-relación-significativa-entre-la-marca-del-portátil-y-el-precio-considerando-características-técnicas-similares"><span class="header-section-number">1.1.2</span> ¿Existe una relación significativa entre la marca del portátil y el precio, considerando características técnicas similares?</h3>
+</section>
+</section>
+</section>
+<section id="objetivo-general" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Objetivo general</h1>
+<p>Identificar los principales factores que influyen en la predicción del precio de los computadores portátiles en el mercado actual, mediante un análisis de regresión lineal múltiple.</p>
+<section id="objetivos-especificos" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="objetivos-especificos"><span class="header-section-number">2.1</span> Objetivos especificos:</h2>
+<ol type="1">
+<li><p>Analizar la relación entre el rendimiento de componentes clave, como la tarjeta gráfica y el procesador, y el precio de los computadores portátiles.</p></li>
+<li><p>Determinar la influencia de la marca en el precio de los computadores portátiles, considerando características técnicas similares entre modelos.</p></li>
+</ol>
+</section>
+</section>
+<section id="analisis-comparativo." class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Analisis comparativo.</h1>
+<p>Antes de comenzar con los procesos estadísticos y el análisis, es importante aclarar que realizaremos tres análisis diferentes, cada uno con características completamente distintas. Esto nos permitirá compararlos y llegar a una conclusión común.</p>
+<section id="análisis-n.º-1" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="análisis-n.º-1"><span class="header-section-number">3.1</span> Análisis N.º 1</h2>
+<p>Para este análisis, y probablemente para los demás, eliminaremos la columna llamada ‘Modelo’, ya que no aporta valor a los datos y genera ruido en los modelos que presentaremos a continuación.</p>
+<section id="tipos-de-datos" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="tipos-de-datos"><span class="header-section-number">3.1.1</span> TIPOS DE DATOS</h3>
+<p>El conjunto de datos que se analizaron corresponde a 3000 observaciones y 12 variables, de las cuales 7 son cuantitativas y 4 son cualitativas. La <a href="#tbl-tabla1" class="quarto-xref">Tabla&nbsp;1</a> presenta una clasificación de las variables.</p>
+<div id="tbl-tabla1" class="quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tabla1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;1: Clasificacion
+</figcaption>
+<div aria-describedby="tbl-tabla1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>VARIABLES</th>
+<th>TIPO</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Brand</td>
+<td>Cualitativa</td>
+</tr>
+<tr class="even">
+<td>Processor</td>
+<td>Cualitativa</td>
+</tr>
+<tr class="odd">
+<td>Graphics Card</td>
+<td>Cualitativa</td>
+</tr>
+<tr class="even">
+<td>Operating System</td>
+<td>Cualitativa</td>
+</tr>
+<tr class="odd">
+<td>Ram</td>
+<td>cualitativa</td>
+</tr>
+<tr class="even">
+<td>Storage</td>
+<td>Cualitativa</td>
+</tr>
+<tr class="odd">
+<td>Screen Size</td>
+<td>Cuantitativa</td>
+</tr>
+<tr class="even">
+<td>Weight</td>
+<td>Cuantitativa</td>
+</tr>
+<tr class="odd">
+<td>Battery Life</td>
+<td>Cuantitativa</td>
+</tr>
+<tr class="even">
+<td>Price</td>
+<td>Cuantitativa</td>
+</tr>
+<tr class="odd">
+<td>Warranty</td>
+<td>Cualitativa</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<section id="analisis-exploratorio" class="level4" data-number="3.1.1.1">
+<h4 data-number="3.1.1.1" class="anchored" data-anchor-id="analisis-exploratorio"><span class="header-section-number">3.1.1.1</span> Analisis exploratorio</h4>
+<section id="analisis-de-variables-cualitativas" class="level5" data-number="3.1.1.1.1">
+<h5 data-number="3.1.1.1.1" class="anchored" data-anchor-id="analisis-de-variables-cualitativas"><span class="header-section-number">3.1.1.1.1</span> Analisis de variables cualitativas</h5>
+<p>Se presenta la matriz de diagramas y correlaciones, de donde extraeremos las primeras conclusiones y apreciaciones de las variables cuantitativas, presentada en la <a href="#fig-matriz" class="quarto-xref">Figura&nbsp;1</a></p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-matriz" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-matriz-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="QUARTOFINAL2.0_files/figure-html/fig-matriz-1.png" id="fig-matriz" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-matriz-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<section id="conlusion." class="level6" data-number="3.1.1.1.1.1">
+<h6 data-number="3.1.1.1.1.1" class="anchored" data-anchor-id="conlusion."><span class="header-section-number">3.1.1.1.1.1</span> Conlusion.</h6>
+<p>En la matriz de correlación, se puede observar que las variables analizadas (Precio, Peso, Batería y Pantalla) no presentan correlaciones significativas entre ellas, ya que los coeficientes de correlación son muy cercanos a 0. Esto sugiere que, en esta base de datos, no hay relaciones lineales fuertes entre las variables que predicen el precio de los computadores portátiles. Por ejemplo, la correlación entre el precio y el peso es de -0.009, lo cual indica que prácticamente no hay asociación. Lo mismo ocurre entre el precio y la duración de la batería (-0.009) o el tamaño de la pantalla (-0.014).</p>
+</section>
+</section>
+<section id="analisis-de-variables-cualitativas-1" class="level5" data-number="3.1.1.1.2">
+<h5 data-number="3.1.1.1.2" class="anchored" data-anchor-id="analisis-de-variables-cualitativas-1"><span class="header-section-number">3.1.1.1.2</span> Analisis de variables cualitativas</h5>
+<p>Se presentan los boxplots comparativos todos en relación al precio.</p>
+<section id="marca" class="level6" data-number="3.1.1.1.2.1">
+<h6 data-number="3.1.1.1.2.1" class="anchored" data-anchor-id="marca"><span class="header-section-number">3.1.1.1.2.1</span> Marca</h6>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="QUARTOFINAL2.0_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="conclusión-de-la-marca-en-relación-al-precio" class="level8">
+<p class="heading">Conclusión de la marca en relación al precio</p>
+<p>Este boxplot muestra la distribución de los precios de diferentes marcas de computadoras portátiles: Acer, Apple, Asus, Dell, HP, Lenovo, MSI, y Razer. En el eje vertical se observa el rango de precios, que va desde 500 hasta 3000. Cada caja representa la mediana y el rango de los precios para cada marca. En general, las marcas presentan rangos de precios similares, pero con algunas diferencias notables en la dispersión. Por ejemplo, Apple y Dell parecen tener una mayor mediana en comparación con otras marcas como MSI o Razer, que muestran precios más bajos en promedio. Sin embargo, todas las marcas comparten rangos amplios de precios, lo que sugiere que dentro de cada marca hay una variedad de modelos con precios distintos.</p>
+</section>
+</section>
+<section id="procesador" class="level6" data-number="3.1.1.1.2.2">
+<h6 data-number="3.1.1.1.2.2" class="anchored" data-anchor-id="procesador"><span class="header-section-number">3.1.1.1.2.2</span> Procesador</h6>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="QUARTOFINAL2.0_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="conclusión-del-procesador-en-relación-al-precio" class="level8">
+<p class="heading">Conclusión del Procesador en relación al precio</p>
+<p>Caso similar pasa en con el procesador y el precio todas las marcas de procesadores su media se mantiene un rango muy parecido dando a entender que todos manejan un promedio de precios parecidos en los computadores con procesadores diferentes.</p>
+</section>
+</section>
+<section id="tarjeta-grafica" class="level6" data-number="3.1.1.1.2.3">
+<h6 data-number="3.1.1.1.2.3" class="anchored" data-anchor-id="tarjeta-grafica"><span class="header-section-number">3.1.1.1.2.3</span> Tarjeta Grafica</h6>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="QUARTOFINAL2.0_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="conclusión-de-la-tarjeta-grafica-en-relación-al-precio" class="level8">
+<p class="heading">Conclusión de la tarjeta grafica en relación al precio</p>
+<p>En este caso existe una ligera diferencia entre la media de precio de la tarjeta grafica marca Intel UHD pero aun así su diferencia no es tan notoria o significativa.</p>
+</section>
+</section>
+<section id="sistema-operativo" class="level6" data-number="3.1.1.1.2.4">
+<h6 data-number="3.1.1.1.2.4" class="anchored" data-anchor-id="sistema-operativo"><span class="header-section-number">3.1.1.1.2.4</span> Sistema Operativo</h6>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="QUARTOFINAL2.0_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="conclusión-de-la-sistema-operativo-en-relación-al-precio" class="level8">
+<p class="heading">Conclusión de la Sistema operativo en relación al precio</p>
+<p>Para el sistema operativo podemos notar un poco mas de diferencia entre la media de precio de la marca macOS y no es de extrañar, es bien sabido que ese sistema operativo en especifico es uno de los mas costosos del mercado entonces tiene sentido que exista esa diferencia en el boxplot.</p>
+</section>
+</section>
+<section id="ram" class="level6" data-number="3.1.1.1.2.5">
+<h6 data-number="3.1.1.1.2.5" class="anchored" data-anchor-id="ram"><span class="header-section-number">3.1.1.1.2.5</span> RAM</h6>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="QUARTOFINAL2.0_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="conclusión-de-la-memoria-ram-en-relación-al-precio." class="level8">
+<p class="heading">Conclusión de la Memoria RAM en relación al precio.</p>
+<p>Según estudios previos La RAM de 16 GB es una de las mas vendidas por su operatividad y su funcionamiento tanto así que la demanda de esa memoria subió exponencialmente para regular esto subieron el precio de la misma, y esto se puede ver reflejado en el boxplot, detallando bien nos podemos percatar que la RAM de 16 GB y 64 GB tiene prácticamente las misma media están por encima que la de 32 GB, en condiciones normales y la lógica de mercado no tendría sentido que una pieza de producción o linea pasada sea mas cara que una mas reciente pero como lo mencione anteriormente esto se da por la alta demanada de la RAM de 16 GB.</p>
+</section>
+</section>
+<section id="espacio-de-almacenamiento" class="level6" data-number="3.1.1.1.2.6">
+<h6 data-number="3.1.1.1.2.6" class="anchored" data-anchor-id="espacio-de-almacenamiento"><span class="header-section-number">3.1.1.1.2.6</span> Espacio de almacenamiento</h6>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="QUARTOFINAL2.0_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="conclusión-del-espacio-de-almacenamiento-en-relación-al-precio" class="level8">
+<p class="heading">Conclusión del Espacio de almacenamiento en relación al precio</p>
+<p>Este Boxplot se muestra muy balanceado en términos del precio de todos los tipos de memoria de almacenamiento dando a entender que se dentro de cada uno existe un promedio muy parecido en precio y caantidad de computadores que lo poseen.</p>
+</section>
+</section>
+<section id="años-de-garantia." class="level6" data-number="3.1.1.1.2.7">
+<h6 data-number="3.1.1.1.2.7" class="anchored" data-anchor-id="años-de-garantia."><span class="header-section-number">3.1.1.1.2.7</span> Años de garantia.</h6>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="QUARTOFINAL2.0_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="conclusión-de-los-años-de-garantía-en-relación-al-precio." class="level8">
+<p class="heading">Conclusión de los años de garantía en relación al precio.</p>
+<p>El Boxplot es bastante acertado podemos inferir que esa pequeña variación en el precio de los computadores de garantía a 3 años, su media es un poco mas alta que las otras, dado que para la empresas o comerciantes dar una garantía tan extendida puede generar perdidas en consecuencia se conoce que aumentan un poco el precio para encontrar el balance adecuado.</p>
+</section>
+<section id="conclusion-general" class="level7">
+<p class="heading">CONCLUSION GENERAL</p>
+<p>Podemos Concluir que el modelo presenta unas variables cualitativas muy parecidas en cuestión de precio y la cantidad de computadores que tienen esas características, esto entorpece un poco el análisis dado que su comportamiento puede decir que esas mismas características no influyen en el precio.</p>
+</section>
+</section>
+</section>
+</section>
+</section>
+<section id="creación-del-modelo" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="creación-del-modelo"><span class="header-section-number">3.1.2</span> Creación del modelo</h3>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = Price ~ Weight + Screen + Battery, data = var_cuanti)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1282.95  -596.31    -8.32   618.47  1239.82 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 1915.629    146.051  13.116   &lt;2e-16 ***
+Weight        -8.638     18.015  -0.480    0.632    
+Screen        -6.653      9.157  -0.727    0.468    
+Battery       -1.839      3.818  -0.482    0.630    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 720.1 on 2996 degrees of freedom
+Multiple R-squared:  0.0003395, Adjusted R-squared:  -0.0006615 
+F-statistic: 0.3392 on 3 and 2996 DF,  p-value: 0.797</code></pre>
+</div>
+</div>
+<section id="conclusiones-iniciales" class="level4" data-number="3.1.2.1">
+<h4 data-number="3.1.2.1" class="anchored" data-anchor-id="conclusiones-iniciales"><span class="header-section-number">3.1.2.1</span> Conclusiones Iniciales</h4>
+<p>El primer modelo presenta un análisis de cómo el precio de los dispositivos varía en función de variables como el peso, el tamaño de la pantalla y la duración de la batería. Aunque los coeficientes individuales no resultan significativos, el modelo ofrece información relevante al proporcionar una idea general sobre la relación de estas variables con el precio. El valor del intercepto destaca que, independientemente de los factores considerados, el precio base promedio tiende a situarse alrededor de 1915 dolares. Esto podría indicar que otras variables no incluidas en el modelo están influyendo en mayor medida en el precio, lo que abre la puerta a futuras exploraciones sobre qué factores podrían estar jugando un papel más determinante.</p>
+</section>
+</section>
+<section id="multicolinealidad" class="level3" data-number="3.1.3">
+<h3 data-number="3.1.3" class="anchored" data-anchor-id="multicolinealidad"><span class="header-section-number">3.1.3</span> Multicolinealidad</h3>
+<p>Aplicamos la función VIF(Variance Inflation Factor) para detectar si existe relación dependiente entre las variables regresoras.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>  Weight   Screen  Battery 
+1.000134 1.000716 1.000780 </code></pre>
+</div>
+</div>
+<section id="conclusiones-del-analisis-del-vif-para-el-modelo" class="level4" data-number="3.1.3.1">
+<h4 data-number="3.1.3.1" class="anchored" data-anchor-id="conclusiones-del-analisis-del-vif-para-el-modelo"><span class="header-section-number">3.1.3.1</span> Conclusiones del analisis del vif para el modelo</h4>
+<p>Contradictorio al modelo el VIF del modelo es muy bueno dado que los valores no son &gt; 10 dándonos a entender que las variables regresoras son independientes entre si mismas.</p>
+</section>
+</section>
+<section id="deteccion-de-outliers-y-puntos-de-influencia" class="level3" data-number="3.1.4">
+<h3 data-number="3.1.4" class="anchored" data-anchor-id="deteccion-de-outliers-y-puntos-de-influencia"><span class="header-section-number">3.1.4</span> Deteccion de outliers y puntos de influencia</h3>
+<p>Se utilizó la <strong>distancia de Cook</strong> para identificar y eliminar <strong>45 filas</strong> de un total de 3000 en nuestro modelo, consideradas como outliers y puntos influyentes. Estas observaciones se eliminaron para mejorar la robustez y precisión del modelo, ya que su presencia podría distorsionar las estimaciones de los parámetros. Al crear un nuevo conjunto de datos limpio, denominado <code>datos1</code>, buscamos obtener resultados más confiables y una interpretación más adecuada del modelo.</p>
+<section id="creacion-de-un-nuevo-modelo" class="level4" data-number="3.1.4.1">
+<h4 data-number="3.1.4.1" class="anchored" data-anchor-id="creacion-de-un-nuevo-modelo"><span class="header-section-number">3.1.4.1</span> Creacion de un nuevo modelo</h4>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = Price ~ Weight + Screen + Battery, data = datos1)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1295.78  -590.09   -10.94   610.92  1240.04 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 1955.858    146.167  13.381   &lt;2e-16 ***
+Weight       -11.124     18.047  -0.616    0.538    
+Screen        -8.933      9.156  -0.976    0.329    
+Battery       -1.321      3.827  -0.345    0.730    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 710.7 on 2951 degrees of freedom
+Multiple R-squared:  0.0004992, Adjusted R-squared:  -0.0005169 
+F-statistic: 0.4912 on 3 and 2951 DF,  p-value: 0.6884</code></pre>
+</div>
+</div>
+<section id="conlusiones" class="level5" data-number="3.1.4.1.1">
+<h5 data-number="3.1.4.1.1" class="anchored" data-anchor-id="conlusiones"><span class="header-section-number">3.1.4.1.1</span> Conlusiones</h5>
+<p>Al comparar ambos modelos, uno con la totalidad de los datos y otro tras la eliminación de 45 outliers, se observa una ligera mejora en el ajuste del modelo al excluir los valores atípicos. El error estándar residual se redujo, lo que no dice es que el modelo es ahora más preciso en sus predicciones. Aunque los coeficientes siguen sin ser significativos, el intercepto, que pasó de 1915 a 1955, indica que el precio base estimado permanece constante, independientemente de las variaciones en las características del producto. Este análisis resalta la importancia de depurar los datos para obtener resultados más representativos, lo que permitió una visión más clara de la relación entre el peso, la pantalla y la batería con el precio.</p>
+</section>
+</section>
+</section>
+<section id="validacion" class="level3" data-number="3.1.5">
+<h3 data-number="3.1.5" class="anchored" data-anchor-id="validacion"><span class="header-section-number">3.1.5</span> Validacion</h3>
+<p>Se procede a validar el en nuevo modelo <code>Modelo1.0</code> con las respectivas pruebas de Normalidad, Homocedasticidad e Independencia.</p>
+<section id="normalidad" class="level4" data-number="3.1.5.1">
+<h4 data-number="3.1.5.1" class="anchored" data-anchor-id="normalidad"><span class="header-section-number">3.1.5.1</span> Normalidad</h4>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  Modelo1.0$residuals
+W = 0.95779, p-value &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<section id="conclusion" class="level5" data-number="3.1.5.1.1">
+<h5 data-number="3.1.5.1.1" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">3.1.5.1.1</span> Conclusion</h5>
+<p>El modelo no presenta una distribución normal dado que el valor p es muchisimo menos que la significancia en este caso de 0,05 dado esto no permite concluir que los datos no se distribuyen correctamente.</p>
+</section>
+</section>
+<section id="homocedasticidad" class="level4" data-number="3.1.5.2">
+<h4 data-number="3.1.5.2" class="anchored" data-anchor-id="homocedasticidad"><span class="header-section-number">3.1.5.2</span> Homocedasticidad</h4>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    studentized Breusch-Pagan test
+
+data:  Modelo1.0
+BP = 4.1257, df = 3, p-value = 0.2482</code></pre>
+</div>
+</div>
+<section id="conclusion-1" class="level5" data-number="3.1.5.2.1">
+<h5 data-number="3.1.5.2.1" class="anchored" data-anchor-id="conclusion-1"><span class="header-section-number">3.1.5.2.1</span> conclusion</h5>
+<p>Para la prueba de homocedasticidad el resultado es positivo dado que el valor-p de la prueba si es mayor que 0.05 lo que indica que los datos son homocedasticos lo que indica que la variable se distribuye con igual varianza en cualquiera de las estimaciones hechas mediante el modelo.</p>
+</section>
+</section>
+<section id="independencia" class="level4" data-number="3.1.5.3">
+<h4 data-number="3.1.5.3" class="anchored" data-anchor-id="independencia"><span class="header-section-number">3.1.5.3</span> Independencia</h4>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Breusch-Godfrey test for serial correlation of order up to 1
+
+data:  Modelo1.0
+LM test = 1.8575, df = 1, p-value = 0.1729</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Durbin-Watson test
+
+data:  Modelo1.0
+DW = 1.9492, p-value = 0.08367
+alternative hypothesis: true autocorrelation is greater than 0</code></pre>
+</div>
+</div>
+<section id="conclusion-2" class="level5" data-number="3.1.5.3.1">
+<h5 data-number="3.1.5.3.1" class="anchored" data-anchor-id="conclusion-2"><span class="header-section-number">3.1.5.3.1</span> Conclusion</h5>
+<p>Según las pruebas, los datos son completamente independientes lo que sugiere que el comportamiento estadístico de una de los cada uno de los datos no se ve afectado por los valores que toma los otros.</p>
+</section>
+</section>
+<section id="aprecicaciones-generales-de-la-validación" class="level4" data-number="3.1.5.4">
+<h4 data-number="3.1.5.4" class="anchored" data-anchor-id="aprecicaciones-generales-de-la-validación"><span class="header-section-number">3.1.5.4</span> Aprecicaciones Generales de la validación</h4>
+<p>La validación de un modelo que muestra falta de normalidad, pero es homocedástico e independiente, sugiere que, aunque la variabilidad de los errores es constante y no hay correlación entre ellos, la falta de normalidad puede comprometer la validez de los resultados estadisticos. Esto implica que se deben considerar ajustes al modelo, como transformaciones de datos, para mejorar su adecuación y asegurar que las conclusiones sean confiables.</p>
+</section>
+</section>
+<section id="refinación-del-modelo" class="level3" data-number="3.1.6">
+<h3 data-number="3.1.6" class="anchored" data-anchor-id="refinación-del-modelo"><span class="header-section-number">3.1.6</span> Refinación del modelo</h3>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Start:  AIC=38837.81
+Price ~ Brand + Processor + RAM + Storage + Screen + Graphics + 
+    Operating + Weight + Battery + Warranty
+
+            Df Sum of Sq        RSS   AIC
+- Brand      7   2108789 1479221380 38828
+- Graphics   4    789974 1477902565 38831
+- Processor  5   2041960 1479154551 38832
+- RAM        3   1303763 1478416354 38834
+- Storage    3   1394315 1478506906 38835
+- Battery    1     40162 1477152753 38836
+- Weight     1    169773 1477282364 38836
+- Screen     1    366271 1477478862 38837
+- Operating  3   2603558 1479716149 38837
+&lt;none&gt;                   1477112591 38838
+- Warranty   2   3795940 1480908531 38841
+
+Step:  AIC=38828.02
+Price ~ Processor + RAM + Storage + Screen + Graphics + Operating + 
+    Weight + Battery + Warranty
+
+            Df Sum of Sq        RSS   AIC
+- Graphics   4    763326 1479984706 38822
+- Processor  5   2047539 1481268919 38822
+- RAM        3   1179806 1480401186 38824
+- Storage    3   1362050 1480583430 38825
+- Battery    1     58864 1479280245 38826
+- Weight     1    164935 1479386315 38826
+- Screen     1    418383 1479639763 38827
+- Operating  3   2649779 1481871159 38827
+&lt;none&gt;                   1479221380 38828
+- Warranty   2   3880866 1483102246 38832
+
+Step:  AIC=38821.55
+Price ~ Processor + RAM + Storage + Screen + Operating + Weight + 
+    Battery + Warranty
+
+            Df Sum of Sq        RSS   AIC
+- Processor  5   2017535 1482002241 38816
+- RAM        3   1157832 1481142538 38818
+- Storage    3   1286558 1481271264 38818
+- Battery    1     57293 1480042000 38820
+- Weight     1    156041 1480140747 38820
+- Screen     1    431720 1480416426 38820
+- Operating  3   2709965 1482694671 38821
+&lt;none&gt;                   1479984706 38822
+- Warranty   2   3834036 1483818742 38825
+
+Step:  AIC=38815.57
+Price ~ RAM + Storage + Screen + Operating + Weight + Battery + 
+    Warranty
+
+            Df Sum of Sq        RSS   AIC
+- RAM        3   1168339 1483170581 38812
+- Storage    3   1279908 1483282149 38812
+- Battery    1     59214 1482061455 38814
+- Weight     1    167627 1482169869 38814
+- Screen     1    415615 1482417857 38814
+- Operating  3   2722539 1484724781 38815
+&lt;none&gt;                   1482002241 38816
+- Warranty   2   3764160 1485766401 38819
+
+Step:  AIC=38811.9
+Price ~ Storage + Screen + Operating + Weight + Battery + Warranty
+
+            Df Sum of Sq        RSS   AIC
+- Storage    3   1282357 1484452938 38808
+- Battery    1     52364 1483222945 38810
+- Weight     1    197082 1483367663 38810
+- Screen     1    455375 1483625956 38811
+- Operating  3   2661943 1485832524 38811
+&lt;none&gt;                   1483170581 38812
+- Warranty   2   3718493 1486889074 38815
+
+Step:  AIC=38808.46
+Price ~ Screen + Operating + Weight + Battery + Warranty
+
+            Df Sum of Sq        RSS   AIC
+- Battery    1     55644 1484508582 38807
+- Weight     1    179100 1484632038 38807
+- Screen     1    446873 1484899810 38807
+- Operating  3   2669295 1487122233 38808
+&lt;none&gt;                   1484452938 38808
+- Warranty   2   3696233 1488149170 38812
+
+Step:  AIC=38806.57
+Price ~ Screen + Operating + Weight + Warranty
+
+            Df Sum of Sq        RSS   AIC
+- Weight     1    179875 1484688456 38805
+- Screen     1    455309 1484963891 38805
+- Operating  3   2668505 1487177087 38806
+&lt;none&gt;                   1484508582 38807
+- Warranty   2   3703258 1488211840 38810
+
+Step:  AIC=38804.93
+Price ~ Screen + Operating + Warranty
+
+            Df Sum of Sq        RSS   AIC
+- Screen     1    456830 1485145286 38804
+- Operating  3   2642958 1487331415 38804
+&lt;none&gt;                   1484688456 38805
+- Warranty   2   3745888 1488434345 38808
+
+Step:  AIC=38803.83
+Price ~ Operating + Warranty
+
+            Df Sum of Sq        RSS   AIC
+- Operating  3   2684887 1487830173 38803
+&lt;none&gt;                   1485145286 38804
+- Warranty   2   3740069 1488885356 38807
+
+Step:  AIC=38803.17
+Price ~ Warranty
+
+           Df Sum of Sq        RSS   AIC
+&lt;none&gt;                  1487830173 38803
+- Warranty  2   3481944 1491312117 38806</code></pre>
+</div>
+</div>
+<section id="seleccion-del-modelo-propuesto" class="level4" data-number="3.1.6.1">
+<h4 data-number="3.1.6.1" class="anchored" data-anchor-id="seleccion-del-modelo-propuesto"><span class="header-section-number">3.1.6.1</span> Seleccion del modelo propuesto</h4>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = Price ~ Warranty, data = datosp)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1305.30  -593.50     3.87   611.80  1258.81 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 1807.200     21.503  84.043   &lt;2e-16 ***
+Warranty2    -72.648     31.831  -2.282   0.0225 *  
+Warranty3      3.301     31.511   0.105   0.9166    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 709.9 on 2952 degrees of freedom
+Multiple R-squared:  0.002335,  Adjusted R-squared:  0.001659 
+F-statistic: 3.454 on 2 and 2952 DF,  p-value: 0.03174</code></pre>
+</div>
+</div>
+<section id="conclusion-3" class="level5" data-number="3.1.6.1.1">
+<h5 data-number="3.1.6.1.1" class="anchored" data-anchor-id="conclusion-3"><span class="header-section-number">3.1.6.1.1</span> Conclusion</h5>
+<p>Dado a que no tendría mucho sentido y relevancia comparar el precio con nada (1) nos debemos acoplar al modelo inicial para tener al menos algunos datos con los cuales trabajar.</p>
+</section>
+</section>
+</section>
+<section id="metricas" class="level3" data-number="3.1.7">
+<h3 data-number="3.1.7" class="anchored" data-anchor-id="metricas"><span class="header-section-number">3.1.7</span> Metricas</h3>
+<p>En este bloque de código, evaluaremos el rendimiento del modelo de regresión lineal ajustado utilizando diversas métricas de error. Calcularemos indicadores que nos permitirán cuantificar la precisión de las predicciones en comparación con los valores reales, así como criterios de información que ayudarán a evaluar la calidad del modelo. Estas métricas nos ofrecerán una visión general del desempeño del modelo en el conjunto de datos de prueba.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>         MAE         MAPE          MSE         RMSE          AIC          BIC 
+5.995038e+02 4.604879e-01 4.784220e+05 6.916806e+02 9.470430e+03 9.610648e+03 
+          R2 
+6.258120e-02 </code></pre>
+</div>
+</div>
+<section id="analisis-de-las-metricas" class="level5" data-number="3.1.7.0.1">
+<h5 data-number="3.1.7.0.1" class="anchored" data-anchor-id="analisis-de-las-metricas"><span class="header-section-number">3.1.7.0.1</span> Analisis de las metricas</h5>
+<p>El modelo muestra un desempeño que, si bien puede ser mejorado, proporciona una buena base para entender la relación entre las variables analizadas y el precio. A pesar de ciertos márgenes de error, las predicciones capturan de manera consistente las tendencias generales en los datos.</p>
+</section>
+</section>
+<section id="conclusiones-finales-del-modelo-n.º-1" class="level3" data-number="3.1.8">
+<h3 data-number="3.1.8" class="anchored" data-anchor-id="conclusiones-finales-del-modelo-n.º-1"><span class="header-section-number">3.1.8</span> Conclusiones Finales del modelo N.º 1</h3>
+<p>En este análisis, se abordó la relación entre diversas características de los computadores portátiles y su precio, buscando responder preguntas clave sobre los principales factores que lo predicen. El modelo planteado evaluó el impacto de variables como el peso, el tamaño de la pantalla y la duración de la batería, encontrando que, aunque estas variables aportan información relevante, su influencia directa sobre el precio es limitada en comparación con otros factores que podrían no incluimos en este análisis , como el rendimiento de componentes más técnicos, como la tarjeta gráfica y el procesador.</p>
+<p>En cuanto a la marca, aunque no se incluyó directamente en este modelo, es probable que sea un factor influyente del precio, especialmente cuando las características técnicas son similares. De hecho, estudios previos han demostrado que la marca influye notablemente en la percepción de calidad y en los precios de los portátiles.</p>
+<p>Si bien el modelo no logró captar todas las relaciones esperadas, debido a la complejidad de los datos y las limitaciones del mismo, logramos cumplir con los supuestos estadísticos de homocedasticidad e independencia. Esto asegura que los resultados, aunque mejorables, son válidos y proporcionan una primera aproximación para comprender las tendencias generales en la determinación de los precios. A lo largo del proceso, se realizo lo mejor posible para optimizar el modelo, pero debido a la naturaleza de los datos, se trabajó con las mejores condiciones posibles.</p>
+</section>
+</section>
+<section id="analisis-n.2" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="analisis-n.2"><span class="header-section-number">3.2</span> Analisis N°.2</h2>
+<p>Para este segundo análisis nos enfocaremos en características especificas de lo que se cree que influye en gran medida el precio de los computadores portátiles.</p>
+<p>Para los análisis 2 y 3 no profundizaremos todas las variables como en sacar conclusiones de cada variable o boxplots ye que se manejaran casi que de la misma forma que en el análisis 1 esto con el fin de no repetir información y ser lo mas preciso posible.</p>
+<section id="tipos-de-datos-1" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="tipos-de-datos-1"><span class="header-section-number">3.2.1</span> Tipos de datos</h3>
+<p>Se mantendrá la características iniciales de los tipos de datos para este segundo análisis.</p>
+<section id="creacion-del-modelo" class="level4" data-number="3.2.1.1">
+<h4 data-number="3.2.1.1" class="anchored" data-anchor-id="creacion-del-modelo"><span class="header-section-number">3.2.1.1</span> Creacion del modelo</h4>
+<p>Para la creación del modelo 2 solo tomaremos en cuenta las Características técnicas de hardware ya que se ha dicho e investigado, que estos factores influyen bastante en el precio de una computadora las cuales son :</p>
+<ul>
+<li>Processor (Procesador)</li>
+<li>RAM (Memoria RAM)</li>
+<li>Storage (Almacenamiento)</li>
+<li>Graphics (Tarjeta gráfica)</li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = Price ~ RAM + Storage + Graphics + Processor, data = var_cuanti.2)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1334.62  -602.22    -6.28   621.62  1284.17 
+
+Coefficients:
+                        Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)             1801.979     52.598  34.259   &lt;2e-16 ***
+RAM16                     27.766     37.477   0.741    0.459    
+RAM32                     -5.966     37.423  -0.159    0.873    
+RAM64                     34.802     37.553   0.927    0.354    
+Storage512               -59.459     37.093  -1.603    0.109    
+Storage1024              -28.473     37.651  -0.756    0.450    
+Storage2048              -16.944     37.704  -0.449    0.653    
+GraphicsIntel UHD         26.388     41.613   0.634    0.526    
+GraphicsNVIDIA GTX 1650   11.065     41.168   0.269    0.788    
+GraphicsNVIDIA RTX 3060   28.362     41.778   0.679    0.497    
+GraphicsNVIDIA RTX 3070  -31.248     40.681  -0.768    0.442    
+ProcessorAMD Ryzen 7     -38.799     45.023  -0.862    0.389    
+ProcessorAMD Ryzen 9     -22.538     45.494  -0.495    0.620    
+ProcessorIntel i5        -60.107     45.299  -1.327    0.185    
+ProcessorIntel i7         19.580     46.110   0.425    0.671    
+ProcessorIntel i9         14.166     45.158   0.314    0.754    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 720.3 on 2984 degrees of freedom
+Multiple R-squared:  0.003893,  Adjusted R-squared:  -0.001114 
+F-statistic: 0.7774 on 15 and 2984 DF,  p-value: 0.7043</code></pre>
+</div>
+</div>
+</section>
+<section id="apreciaciones-iniciales-del-modelo-n.2" class="level4" data-number="3.2.1.2">
+<h4 data-number="3.2.1.2" class="anchored" data-anchor-id="apreciaciones-iniciales-del-modelo-n.2"><span class="header-section-number">3.2.1.2</span> Apreciaciones iniciales del modelo N°.2</h4>
+<p>El segundo modelo, centrado exclusivamente en las características técnicas de hardware, proporciona una visión valiosa sobre cómo componentes como el procesador, la memoria RAM, el almacenamiento y la tarjeta gráfica influyen en el precio de los portátiles. Aunque los coeficientes individuales no resultaron significativos, el modelo permite identificar que estas variables, particularmente el procesador y la RAM, tienen un impacto notable en el precio base del dispositivo. El modelo ofrece una primera aproximación útil, mostrando una base de 1801 dolares, lo que refuerza la importancia del hardware como un factor clave en la variación de precios en el mercado actual.</p>
+</section>
+</section>
+<section id="multicolinealidad-1" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="multicolinealidad-1"><span class="header-section-number">3.2.2</span> Multicolinealidad</h3>
+<p>Aplicamos la función VIF(Variance Inflation Factor) para detectar si existe relación dependiente entre las variables regresoras.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>              GVIF Df GVIF^(1/(2*Df))
+RAM       1.012310  3        1.002041
+Storage   1.015075  3        1.002497
+Graphics  1.017113  4        1.002123
+Processor 1.021264  5        1.002106</code></pre>
+</div>
+</div>
+<section id="conclusion-del-vif" class="level4" data-number="3.2.2.1">
+<h4 data-number="3.2.2.1" class="anchored" data-anchor-id="conclusion-del-vif"><span class="header-section-number">3.2.2.1</span> Conclusion del Vif:</h4>
+<p>Se puede concluir que no hay relación entre las variables regresoras esto siempre es positivo para todos los analisis.</p>
+</section>
+</section>
+<section id="deteccion-de-outliers-y-puntos-de-influencia." class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="deteccion-de-outliers-y-puntos-de-influencia."><span class="header-section-number">3.2.3</span> Deteccion de Outliers y Puntos de influencia.</h3>
+<p>Dado que se usa la misma tabla y el mismo tipo de variables replicaremos los outliers del análisis pasado los cuales fueron 45 filas candidatas a outliers.</p>
+<section id="creacion-de-un-nuevo-modelo-1" class="level4" data-number="3.2.3.1">
+<h4 data-number="3.2.3.1" class="anchored" data-anchor-id="creacion-de-un-nuevo-modelo-1"><span class="header-section-number">3.2.3.1</span> Creacion de un nuevo modelo</h4>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = Price ~ RAM + Storage + Graphics + Processor, data = datos3)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1320.13  -591.85    -5.31   611.99  1260.52 
+
+Coefficients:
+                        Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)             1801.706     52.219  34.503   &lt;2e-16 ***
+RAM16                     29.034     37.263   0.779    0.436    
+RAM32                     -3.322     37.194  -0.089    0.929    
+RAM64                     43.679     37.358   1.169    0.242    
+Storage512               -56.844     36.980  -1.537    0.124    
+Storage1024              -23.345     37.402  -0.624    0.533    
+Storage2048              -13.080     37.412  -0.350    0.727    
+GraphicsIntel UHD         15.026     41.397   0.363    0.717    
+GraphicsNVIDIA GTX 1650    9.605     40.902   0.235    0.814    
+GraphicsNVIDIA RTX 3060   33.321     41.568   0.802    0.423    
+GraphicsNVIDIA RTX 3070  -15.936     40.564  -0.393    0.694    
+ProcessorAMD Ryzen 7     -35.078     44.713  -0.785    0.433    
+ProcessorAMD Ryzen 9     -32.361     45.294  -0.714    0.475    
+ProcessorIntel i5        -57.385     45.049  -1.274    0.203    
+ProcessorIntel i7         15.265     45.810   0.333    0.739    
+ProcessorIntel i9          7.521     44.829   0.168    0.867    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 711.1 on 2939 degrees of freedom
+Multiple R-squared:  0.003425,  Adjusted R-squared:  -0.001661 
+F-statistic: 0.6734 on 15 and 2939 DF,  p-value: 0.813</code></pre>
+</div>
+</div>
+<section id="analisis-del-nuevo-modelo" class="level5" data-number="3.2.3.1.1">
+<h5 data-number="3.2.3.1.1" class="anchored" data-anchor-id="analisis-del-nuevo-modelo"><span class="header-section-number">3.2.3.1.1</span> Analisis del nuevo modelo</h5>
+<p>Al eliminar los 45 outliers en este nuevo modelo, se observa una ligera mejora en la precisión del ajuste. El error estándar residual se redujo de 720.3 a 711.1, lo que indica que las predicciones son ahora un poco más cercanas a los valores reales. A pesar de que las variables aún no son significativas, el modelo muestra una mayor estabilidad en los resultados y reafirma la idea de que la exclusión de outliers permite un análisis más preciso a los datos generales. Las diferencias no son drásticas, pero el modelo es más representativo.</p>
+</section>
+</section>
+</section>
+<section id="validacion-1" class="level3" data-number="3.2.4">
+<h3 data-number="3.2.4" class="anchored" data-anchor-id="validacion-1"><span class="header-section-number">3.2.4</span> Validacion</h3>
+<p>Se procede a validar el en nuevo modelo <code>Modelo2.0</code> con las respectivas pruebas de Normalidad, Homocedasticidad e Independencia.</p>
+<section id="normalidad-1" class="level4" data-number="3.2.4.1">
+<h4 data-number="3.2.4.1" class="anchored" data-anchor-id="normalidad-1"><span class="header-section-number">3.2.4.1</span> Normalidad</h4>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  Modelo2.0$residuals
+W = 0.95911, p-value &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<section id="conclusion-4" class="level5" data-number="3.2.4.1.1">
+<h5 data-number="3.2.4.1.1" class="anchored" data-anchor-id="conclusion-4"><span class="header-section-number">3.2.4.1.1</span> Conclusion</h5>
+<p>Volvemos a no tener normalidad en los datos lo que indica que podemos obtener conclusiones inexactas o engañosas, o no detectar efectos o relaciones significativas.</p>
+</section>
+</section>
+<section id="homocedasticidad-1" class="level4" data-number="3.2.4.2">
+<h4 data-number="3.2.4.2" class="anchored" data-anchor-id="homocedasticidad-1"><span class="header-section-number">3.2.4.2</span> Homocedasticidad</h4>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    studentized Breusch-Pagan test
+
+data:  Modelo2.0
+BP = 29.296, df = 15, p-value = 0.01473</code></pre>
+</div>
+</div>
+<section id="conclusion-5" class="level5" data-number="3.2.4.2.1">
+<h5 data-number="3.2.4.2.1" class="anchored" data-anchor-id="conclusion-5"><span class="header-section-number">3.2.4.2.1</span> conclusion</h5>
+<p>Por desgracia los datos son heterocedasticos lo que indica que la varianza de los errores no es constante en todas las observaciones realizadas.</p>
+</section>
+</section>
+<section id="independencia-1" class="level4" data-number="3.2.4.3">
+<h4 data-number="3.2.4.3" class="anchored" data-anchor-id="independencia-1"><span class="header-section-number">3.2.4.3</span> Independencia</h4>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Breusch-Godfrey test for serial correlation of order up to 1
+
+data:  Modelo2.0
+LM test = 2.0911, df = 1, p-value = 0.1482</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Durbin-Watson test
+
+data:  Modelo2.0
+DW = 1.9463, p-value = 0.07239
+alternative hypothesis: true autocorrelation is greater than 0</code></pre>
+</div>
+</div>
+<section id="conclusion-6" class="level5" data-number="3.2.4.3.1">
+<h5 data-number="3.2.4.3.1" class="anchored" data-anchor-id="conclusion-6"><span class="header-section-number">3.2.4.3.1</span> conclusion</h5>
+<p>Para el modelo 2 los datos si son independientes</p>
+</section>
+</section>
+<section id="aprecicaciones-generales-de-la-validación-1" class="level4" data-number="3.2.4.4">
+<h4 data-number="3.2.4.4" class="anchored" data-anchor-id="aprecicaciones-generales-de-la-validación-1"><span class="header-section-number">3.2.4.4</span> Aprecicaciones Generales de la validación</h4>
+<p>En este análisis, se observó que los datos no son normales, son heterocedásticos e independientes. Aunque la independencia de los errores es un aspecto positivo para la validez del modelo, la heterocedasticidad indica que la varianza de los errores no es constante, lo que puede afectar la precisión del modelo.</p>
+</section>
+</section>
+<section id="refinacion-del-modelo" class="level3" data-number="3.2.5">
+<h3 data-number="3.2.5" class="anchored" data-anchor-id="refinacion-del-modelo"><span class="header-section-number">3.2.5</span> Refinacion del modelo</h3>
+<p>Pondremos como punto de partida el modelo2.0 con esas mismas variables regresoras e ir eliminando cada una de las variables hasta llegar al AIC mínimo, cabe aclarar que debe de tener sentido el modelo propuesto al final, en caso contrario seguiremos con el planteado al inicio.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Start:  AIC=38825.94
+Price ~ RAM + Storage + Graphics + Processor
+
+            Df Sum of Sq        RSS   AIC
+- Graphics   4    775452 1486979550 38819
+- Processor  5   1998409 1488202507 38820
+- RAM        3   1149504 1487353602 38822
+- Storage    3   1325021 1487529119 38823
+&lt;none&gt;                   1486204097 38826
+
+Step:  AIC=38819.48
+Price ~ RAM + Storage + Processor
+
+            Df Sum of Sq        RSS   AIC
+- Processor  5   1959724 1488939273 38813
+- RAM        3   1125791 1488105341 38816
+- Storage    3   1245474 1488225024 38816
+&lt;none&gt;                   1486979550 38819
+
+Step:  AIC=38813.37
+Price ~ RAM + Storage
+
+          Df Sum of Sq        RSS   AIC
+- RAM      3   1131065 1490070338 38810
+- Storage  3   1242476 1490181749 38810
+&lt;none&gt;                 1488939273 38813
+
+Step:  AIC=38809.62
+Price ~ Storage
+
+          Df Sum of Sq        RSS   AIC
+- Storage  3   1241779 1491312117 38806
+&lt;none&gt;                 1490070338 38810
+
+Step:  AIC=38806.08
+Price ~ 1</code></pre>
+</div>
+</div>
+<section id="modelo-propuesto-por-la-funcion-stepwise" class="level4" data-number="3.2.5.1">
+<h4 data-number="3.2.5.1" class="anchored" data-anchor-id="modelo-propuesto-por-la-funcion-stepwise"><span class="header-section-number">3.2.5.1</span> Modelo propuesto por la funcion StepWise</h4>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = Price ~ 1, data = datos3)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1284.24  -592.48    -7.37   609.17  1213.91 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  1785.77      13.07   136.6   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 710.5 on 2954 degrees of freedom</code></pre>
+</div>
+</div>
+<section id="conclusion-7" class="level5" data-number="3.2.5.1.1">
+<h5 data-number="3.2.5.1.1" class="anchored" data-anchor-id="conclusion-7"><span class="header-section-number">3.2.5.1.1</span> CONCLUSION</h5>
+<p>El mismo problema presente en el análisis anterior el stepwise nos proporciona un modelo no muy efectivo para predecir el precio de los computadores por esto debemos seguir con el modelo inicial.</p>
+</section>
+</section>
+</section>
+<section id="metricas-1" class="level3" data-number="3.2.6">
+<h3 data-number="3.2.6" class="anchored" data-anchor-id="metricas-1"><span class="header-section-number">3.2.6</span> Metricas</h3>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>         MAE         MAPE          MSE         RMSE          AIC          BIC 
+6.485351e+02 5.091503e-01 5.702811e+05 7.551696e+02 1.020867e+04 1.028441e+04 
+          R2 
+2.861294e-02 </code></pre>
+</div>
+</div>
+<section id="conlusion" class="level4" data-number="3.2.6.1">
+<h4 data-number="3.2.6.1" class="anchored" data-anchor-id="conlusion"><span class="header-section-number">3.2.6.1</span> Conlusion</h4>
+<p>Este modelo, aunque mejorable, ofrece una base sólida para analizar cómo las características técnicas de hardware influyen en el precio de los portátiles. El MAE de 648.53 indica que el error promedio de las predicciones está dentro de un rango razonable, considerando la complejidad de los datos. Además, el RMSE de 755.17 refleja consistencia en las estimaciones, lo que permite identificar tendencias generales de precios basadas en las especificaciones técnicas. Sin embargo, el R² de 2.86% indica que aún hay otros factores importantes que no están siendo capturados por el modelo. A pesar del panorama, el análisis proporciona una primera aproximación útil, destacando la influencia del hardware en el mercado actual.</p>
+</section>
+</section>
+<section id="conclusiones-finales-del-modelo-n.º-2" class="level3" data-number="3.2.7">
+<h3 data-number="3.2.7" class="anchored" data-anchor-id="conclusiones-finales-del-modelo-n.º-2"><span class="header-section-number">3.2.7</span> Conclusiones Finales del modelo N.º 2</h3>
+<p>El modelo enfocado en las características técnicas de hardware como el procesador, la RAM, el almacenamiento y la tarjeta gráfica, proporciona una visión inicial sobre su influencia en el precio de los portátiles. Aunque las variables analizadas no resultaron ser significativas de manera individual, el modelo refleja ciertas tendencias generales que ayudan a entender la dinámica de precios en el mercado actual. A pesar de que los residuos muestran heterocedasticidad y no normalidad, se confirma la independencia de los errores, lo que valida en parte las conclusiones obtenidas.</p>
+<p>En cuanto a las preguntas clave, los resultados sugieren que, aunque las características técnicas de hardware influyen en el precio, es probable que factores adicionales, como la marca, jueguen un rol importante que no fue apreciado para el modelo. Si embargo el ajuste no es muy óptimo pero refleja el máximo de precisión que se pudo obtener, lo que refuerza la necesidad de explorar nuevas variables para mejorar el ajuste.</p>
+</section>
+</section>
+<section id="análisis-n.º-3" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="análisis-n.º-3"><span class="header-section-number">3.3</span> Análisis N.º 3</h2>
+<p>En este análisis Abordaremos principalmente las características físicas de un computador portátil en combinación con las características de mercado, ademas de eso cambiaremos el tipo de datos que se había propuesto inicialmente.</p>
+<section id="tipos-de-datos-2" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="tipos-de-datos-2"><span class="header-section-number">3.3.1</span> Tipos de datos</h3>
+<p>Para este modelo trabajaremos con las siguientes variables</p>
+<p>Weight(Peso) Screen (Tamaño de pantalla) Battery (Duración de batería) Brand (Marca) Warranty (Garantía)</p>
+<p>Cambiamos la variable “Screen” que estaba definida como cuantitativa a cualitativa para analizar este nuevo modelo.</p>
+<section id="creacion-del-modelo-1" class="level4" data-number="3.3.1.1">
+<h4 data-number="3.3.1.1" class="anchored" data-anchor-id="creacion-del-modelo-1"><span class="header-section-number">3.3.1.1</span> Creacion del modelo</h4>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = Price ~ Weight + Battery + Battery + Screen + Brand + 
+    Warranty, data = var_cuanti.3)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1343.42  -607.73     0.71   618.84  1261.53 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 1887.435    152.235  12.398   &lt;2e-16 ***
+Weight        -7.794     18.040  -0.432   0.6657    
+Battery       -1.626      3.824  -0.425   0.6707    
+Screen        -6.271      9.172  -0.684   0.4942    
+BrandApple    58.873     53.097   1.109   0.2676    
+BrandAsus     81.185     52.295   1.552   0.1207    
+BrandDell     33.980     51.841   0.655   0.5122    
+BrandHP       52.364     52.619   0.995   0.3197    
+BrandLenovo   14.653     52.786   0.278   0.7813    
+BrandMSI      39.080     52.908   0.739   0.4602    
+BrandRazer    36.648     53.207   0.689   0.4910    
+Warranty2    -64.517     32.125  -2.008   0.0447 *  
+Warranty3     -3.285     31.769  -0.103   0.9176    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 720.2 on 2987 degrees of freedom
+Multiple R-squared:  0.003098,  Adjusted R-squared:  -0.0009066 
+F-statistic: 0.7736 on 12 and 2987 DF,  p-value: 0.6784</code></pre>
+</div>
+</div>
+</section>
+<section id="conclusion-del-modelo" class="level4" data-number="3.3.1.2">
+<h4 data-number="3.3.1.2" class="anchored" data-anchor-id="conclusion-del-modelo"><span class="header-section-number">3.3.1.2</span> Conclusion del modelo</h4>
+<p>Este modelo incorpora la variable adicional de la garantía junto con el peso, la batería, el tamaño de pantalla y la marca, y ofrece una visión más completa sobre los factores que pueden influir en el precio de los portátiles. La variable “Warranty2” muestra una relación significativa, sugiriendo que la duración de la garantía podría tener un impacto en el precio. Aunque otras variables, como el peso y la marca, no resultaron ser estadísticamente significativas, el modelo muestra que la percepción de valor y la garantía del producto pueden ser factores importantes en la determinación del precio.</p>
+</section>
+</section>
+<section id="multicolinealidad-2" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="multicolinealidad-2"><span class="header-section-number">3.3.2</span> Multicolinealidad</h3>
+<p>Aplicamos la función VIF(Variance Inflation Factor) para detectar si existe relación dependiente entre las variables regresoras.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>             GVIF Df GVIF^(1/(2*Df))
+Weight   1.002649  1        1.001324
+Battery  1.003387  1        1.001692
+Screen   1.003913  1        1.001955
+Brand    1.009455  7        1.000672
+Warranty 1.005287  2        1.001319</code></pre>
+</div>
+</div>
+<section id="conclusiones-del-vif" class="level4" data-number="3.3.2.1">
+<h4 data-number="3.3.2.1" class="anchored" data-anchor-id="conclusiones-del-vif"><span class="header-section-number">3.3.2.1</span> Conclusiones del Vif</h4>
+<p>Con este tercer modelo podemos reafirmar que todos los modelos que hagamos con las variables sin ser transformadas siempre dará como resultado que no hay multicolinealidad.</p>
+</section>
+</section>
+<section id="deteccion-de-outliers-y-puntos-de-influencia-1" class="level3" data-number="3.3.3">
+<h3 data-number="3.3.3" class="anchored" data-anchor-id="deteccion-de-outliers-y-puntos-de-influencia-1"><span class="header-section-number">3.3.3</span> Deteccion de outliers y puntos de influencia</h3>
+<p>Para este modelo mantendremos los 3000 datos con el fin de examinar si en realidad afecta o no el modelo en cuestión.</p>
+</section>
+<section id="validacion-2" class="level3" data-number="3.3.4">
+<h3 data-number="3.3.4" class="anchored" data-anchor-id="validacion-2"><span class="header-section-number">3.3.4</span> Validacion</h3>
+<p>Se procede a validar el en nuevo modelo <code>Modelo.3</code> con las respectivas pruebas de Normalidad, Homocedasticidad e Independencia.</p>
+<p>Para esta validación omitiremos las conclusiones dado que ya entendimos como funciona y en que afecta con los modelos anteriores a este.</p>
+<section id="normalidad-2" class="level4" data-number="3.3.4.1">
+<h4 data-number="3.3.4.1" class="anchored" data-anchor-id="normalidad-2"><span class="header-section-number">3.3.4.1</span> Normalidad</h4>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  Modelo.3$residuals
+W = 0.95766, p-value &lt; 2.2e-16</code></pre>
+</div>
+</div>
+</section>
+<section id="homocedasticidad-2" class="level4" data-number="3.3.4.2">
+<h4 data-number="3.3.4.2" class="anchored" data-anchor-id="homocedasticidad-2"><span class="header-section-number">3.3.4.2</span> Homocedasticidad</h4>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    studentized Breusch-Pagan test
+
+data:  Modelo.3
+BP = 19.342, df = 12, p-value = 0.0806</code></pre>
+</div>
+</div>
+</section>
+<section id="independencia-2" class="level4" data-number="3.3.4.3">
+<h4 data-number="3.3.4.3" class="anchored" data-anchor-id="independencia-2"><span class="header-section-number">3.3.4.3</span> Independencia</h4>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Breusch-Godfrey test for serial correlation of order up to 1
+
+data:  Modelo.3
+LM test = 2.2171, df = 1, p-value = 0.1365</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Durbin-Watson test
+
+data:  Modelo.3
+DW = 1.945, p-value = 0.06599
+alternative hypothesis: true autocorrelation is greater than 0</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="refinacion-del-modelo-1" class="level3" data-number="3.3.5">
+<h3 data-number="3.3.5" class="anchored" data-anchor-id="refinacion-del-modelo-1"><span class="header-section-number">3.3.5</span> Refinacion del modelo</h3>
+<p>Pondremos como punto de partida el modelo.3 con esas mismas variable regresoras e ir eliminando cada una de las variables hasta llegar al AIC mínimo, cabe aclarar que debe de tener sentido el modelo propuesto al final en caso contrario seguiremos con el planteado al inicio.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Start:  AIC=39490.37
+Price ~ Weight + Battery + Battery + Screen + Brand + Warranty
+
+           Df Sum of Sq        RSS   AIC
+- Brand     7   1694346 1551131274 39480
+- Battery   1     93779 1549530707 39489
+- Weight    1     96824 1549533752 39489
+- Screen    1    242466 1549679394 39489
+&lt;none&gt;                  1549436928 39490
+- Warranty  2   2543537 1551980465 39491
+
+Step:  AIC=39479.65
+Price ~ Weight + Battery + Screen + Warranty
+
+           Df Sum of Sq        RSS   AIC
+- Weight    1     91729 1551223003 39478
+- Battery   1    114345 1551245619 39478
+- Screen    1    288140 1551419414 39478
+&lt;none&gt;                  1551131274 39480
+- Warranty  2   2593667 1553724942 39481
+
+Step:  AIC=39477.83
+Price ~ Battery + Screen + Warranty
+
+           Df Sum of Sq        RSS   AIC
+- Battery   1    116380 1551339383 39476
+- Screen    1    290030 1551513033 39476
+&lt;none&gt;                  1551223003 39478
+- Warranty  2   2621178 1553844181 39479
+
+Step:  AIC=39476.05
+Price ~ Screen + Warranty
+
+           Df Sum of Sq        RSS   AIC
+- Screen    1    300119 1551639502 39475
+&lt;none&gt;                  1551339383 39476
+- Warranty  2   2627462 1553966846 39477
+
+Step:  AIC=39474.63
+Price ~ Warranty
+
+           Df Sum of Sq        RSS   AIC
+&lt;none&gt;                  1551639502 39475
+- Warranty  2   2613111 1554252613 39476</code></pre>
+</div>
+</div>
+<section id="modelo-propuesto-por-la-funcion-stepwise-1" class="level4" data-number="3.3.5.1">
+<h4 data-number="3.3.5.1" class="anchored" data-anchor-id="modelo-propuesto-por-la-funcion-stepwise-1"><span class="header-section-number">3.3.5.1</span> Modelo propuesto por la funcion StepWise</h4>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = Price ~ Warranty, data = var_cuanti.3)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1298.87  -603.97     4.26   623.71  1257.10 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 1801.366     21.665  83.145   &lt;2e-16 ***
+Warranty2    -65.103     32.051  -2.031   0.0423 *  
+Warranty3     -2.781     31.681  -0.088   0.9300    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 719.5 on 2997 degrees of freedom
+Multiple R-squared:  0.001681,  Adjusted R-squared:  0.001015 
+F-statistic: 2.524 on 2 and 2997 DF,  p-value: 0.08034</code></pre>
+</div>
+</div>
+<section id="conclusion-8" class="level5" data-number="3.3.5.1.1">
+<h5 data-number="3.3.5.1.1" class="anchored" data-anchor-id="conclusion-8"><span class="header-section-number">3.3.5.1.1</span> CONCLUSION</h5>
+<p>A pesar de que el stepwise nos arrojo un modelo con una variable no lo podemos tomar ya que estaríamos omitiendo mucha información para el análisis, a nivel de mercado se sabe que la garantía no es lo único que influye en el precio de los computadores.</p>
+</section>
+</section>
+</section>
+<section id="metricas-2" class="level3" data-number="3.3.6">
+<h3 data-number="3.3.6" class="anchored" data-anchor-id="metricas-2"><span class="header-section-number">3.3.6</span> Metricas</h3>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>         MAE         MAPE          MSE         RMSE          AIC          BIC 
+6.485351e+02 5.091503e-01 5.702811e+05 7.551696e+02 1.020517e+04 1.026755e+04 
+          R2 
+2.478114e-02 </code></pre>
+</div>
+</div>
+<section id="conlusion-1" class="level4" data-number="3.3.6.1">
+<h4 data-number="3.3.6.1" class="anchored" data-anchor-id="conlusion-1"><span class="header-section-number">3.3.6.1</span> Conlusion</h4>
+<p>A pesar de que las métricas no son tan precisas respecto a el precio de los portátiles, hay aspectos destacables en el rendimiento del modelo. El error absoluto medio (MAE) de 648.5 indica que el modelo está logrando predecir con un margen de error manejable para un mercado tan variado como el de los portátiles. El RMSE de 755.2 también sugiere que, aunque existen diferencias en las predicciones, el modelo sigue proporcionando estimaciones útiles. Además, el AIC y el BIC reflejan la simplicidad del modelo, lo cual puede ser útil para seguir refinando predicciones sin introducir demasiada complejidad.</p>
+</section>
+</section>
+</section>
+<section id="conclusiones-finales-del-modelo-n.º-3" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="conclusiones-finales-del-modelo-n.º-3"><span class="header-section-number">3.4</span> Conclusiones Finales del modelo N.º 3</h2>
+<p>Este modelo 3 nos da una visión clara de cómo ciertas características, como el peso, la batería, la pantalla, la marca y la garantía, influyen en el precio de los portátiles, a pesar de las particularidades de los datos. El hecho de que no haya multicolinealidad en las variables regresoras indica que las variables explicativas son independientes entre sí, lo que refuerza la validez de los coeficientes estimados. Además, aunque los datos no son normales, el modelo es homocedástico e independiente, lo que garantiza una distribución equitativa de los errores y evita problemas de correlación entre ellos. Si bien las métricas como el MAE y el RMSE muestran que el modelo tiene margen de mejora, su simplicidad lo convierten en una herramienta útil para estimar precios en mercados complejos.</p>
+</section>
+</section>
+<section id="conclusion-final" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Conclusion Final</h1>
+<p>A lo largo de este análisis, se ha investigado la influencia de varios factores en el precio de los computadores portátiles, enfocándonos en tres modelos clave. Los principales factores que se consideraron fueron las características técnicas como la memoria RAM, el almacenamiento, la tarjeta gráfica, el procesador, así como variables adicionales como el peso, el tamaño de la pantalla, la marca y la garantía. En general, los resultados sugieren que no existe una correlación fuerte y directa entre las variables individuales y el precio de los portátiles, pero sí se observan algunas tendencias interesantes.</p>
+<ol type="1">
+<li><p><strong>Componentes de hardware</strong>: Aunque en los modelos analizados no se encontró una relación fuerte entre componentes como la tarjeta gráfica y el procesador con el precio, es evidente que estos factores son clave en la diferenciación de gamas de productos. Las tarjetas gráficas más potentes, como la serie NVIDIA RTX, tienden a asociarse con incrementos de precio, aunque esta relación no fue estadísticamente significativa en el análisis. Sin embargo, segun investigaciones los consumidores probablemente perciban el valor de estos componentes.</p></li>
+<li><p><strong>Marca del portátil</strong>: Al considerar la marca de los computadores portátiles, tampoco se encontró una relación significativa en el contexto de características técnicas similares, lo que indica que, a nivel técnico, las marcas compiten de manera equilibrada. Sin embargo, esto no necesariamente refleja la percepción del consumidor, donde marcas premium como Apple tienden a tener precios más altos en general.</p></li>
+<li><p><strong>Análisis estadístico</strong>: Los modelos demostraron independencia de errores, homocedasticidad y ausencia de multicolinealidad, lo que indica que los modelos están correctamente especificados en términos de las interrelaciones entre las variables. Aunque no se logró normalidad en los datos, la estructura del modelo fue robusta, y el análisis de múltiples métricas como MAE, MSE y R2, a pesar de ser relativamente bajos, nos da ea entender que capturamos aspectos clave de la variabilidad en el precio.</p></li>
+</ol>
+<p>Por último, es importante mencionar que se probaron otros modelos con diferentes transformaciones y ajustes, pero sus resultados fueron similares a los tres presentados, lo que refuerza la complejidad inherente de los datos y justifica la elección de los modelos finales utilizados.</p>
+</section>
+<section id="referencias" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Referencias</h1>
+<ul>
+<li>Cinco factores a tener en cuenta para comprar una computadora nueva más allá del precio Recuperado de <a href="https://www.losandes.com.ar/muy-tecno/cinco-factores-a-tener-en-cuenta-para-comprar-una-computadora-nueva-mas-alla-del-precio/" class="uri">https://www.losandes.com.ar/muy-tecno/cinco-factores-a-tener-en-cuenta-para-comprar-una-computadora-nueva-mas-alla-del-precio/</a></li>
+<li>¿Qué hace caro o barato a un computador? Guía de compra. Recuperado de <a href="https://www.eleconomista.net/tecnologia/Que-hace-caro-o-barato-a-un-computador-Guia-de-compra-20230822-0029.html" class="uri">https://www.eleconomista.net/tecnologia/Que-hace-caro-o-barato-a-un-computador-Guia-de-compra-20230822-0029.html</a></li>
+</ul>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
